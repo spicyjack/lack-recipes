@@ -1,0 +1,34 @@
+# $Id: generate_recipe.sh,v 1.8 2009-07-31 23:47:23 brian Exp $
+# description: example package with comments
+# depends: _base otherpackage1 otherpackage2
+# helpcommand: /usr/bin/somebin --help
+# versioncommand: /usr/bin/somebin --version
+# examplecommand: /usr/bin/somebin -x -y -z 10
+#
+# dir <name> <mode> <uid> <gid>
+# file <name> <source> <mode> <uid> <gid>
+# slink <new name> <original file> <mode> <uid> <gid>
+#
+# cpp-4.3
+dir /usr 0755 0 0
+dir /usr/lib 755 0 0
+dir /usr/lib/gcc 755 0 0
+dir /usr/lib/gcc/i486-linux-gnu 755 0 0
+dir /usr/lib/gcc/i486-linux-gnu/4.3 755 0 0
+file /usr/lib/gcc/i486-linux-gnu/4.3/cc1 /usr/lib/gcc/i486-linux-gnu/4.3/cc1 755 0 0
+slink /usr/bin/cc1 /usr/lib/gcc/i486-linux-gnu/4.3/cc1 755 0 0
+dir /usr/bin 0755 0 0
+file /usr/bin/cpp-4.3 /usr/bin/cpp-4.3 755 0 0
+slink /usr/bin/i486-linux-gnu-cpp-4.3 /usr/bin/cpp-4.3 777 0 0
+# cpp
+slink /usr/bin/i486-linux-gnu-cpp /usr/bin/cpp-4.3 777 0 0
+slink /usr/bin/cpp /usr/bin/cpp-4.3 777 0 0
+# libmpfr1ldbl
+file /usr/lib/libmpfr.so.1.1.1 /usr/lib/libmpfr.so.1.1.1 644 0 0
+slink /usr/lib/libmpfr.so.1 /usr/lib/libmpfr.so.1.1.1 777 0 0
+# libgmp3c2
+file /usr/lib/libgmp.so.3.4.2 /usr/lib/libgmp.so.3.4.2 644 0 0
+file /usr/lib/libmp.so.3.1.11 /usr/lib/libmp.so.3.1.11 644 0 0
+slink /usr/lib/libgmp.so.3 /usr/lib/libgmp.so.3.4.2 777 0 0
+slink /usr/lib/libmp.so.3 /usr/lib/libmp.so.3.1.11 777 0 0
+# vi: set sw=4 ts=4 paste:
