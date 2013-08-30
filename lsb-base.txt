@@ -1,4 +1,4 @@
-# $Id: lsb-base.lenny.txt,v 1.2 2009-03-20 09:10:37 brian Exp $
+# package name/version: lsb-base / 4.1+Debian8
 # description: example package with comments
 # depends: _base otherpackage1 otherpackage2
 # helpcommand: /usr/bin/somebin --help
@@ -9,7 +9,11 @@
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-dir /etc/lsb-base 755 0 0
+dir /usr 755 0 0
+dir /usr/share 755 0 0
+dir /lib 755 0 0
 dir /lib/lsb 755 0 0
 file /lib/lsb/init-functions /lib/lsb/init-functions 644 0 0
-# vi: set sw=4 ts=4 paste:
+dir /lib/lsb/init-functions.d 755 0 0
+file /lib/lsb/init-functions.d/20-left-info-blocks /lib/lsb/init-functions.d/20-left-info-blocks 644 0 0
+# vim: set filetype=config shiftwidth=2 tabstop=2 paste:
