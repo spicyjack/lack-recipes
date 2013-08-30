@@ -1,0 +1,18 @@
+# $Id: debug.txt,v 1.5 2009-06-30 08:23:19 brian Exp $
+# name: debug-tools
+# description: misc debugging tools
+# depends: _base otherpackage1 otherpackage2
+# helpcommand: /usr/bin/somebin --help
+# versioncommand: /usr/bin/somebin --version
+# examplecommand: /usr/bin/somebin -x -y -z 10
+#
+# dir <name> <mode> <uid> <gid>
+# file <name> <source> <mode> <uid> <gid>
+# slink <new name> <original file> <mode> <uid> <gid>
+#
+# show the environment for debugging
+file /etc/scripts/showenv.sh :LACK_BASE:/scripts/showenv.sh 0755 0 0
+slink /bin/showenv /etc/scripts/showenv.sh 0755 0 0
+file /etc/scripts/get_debug_info.sh :LACK_BASE:/scripts/get_debug_info.sh 0755 0 0
+slink /bin/get_debug_info /etc/scripts/get_debug_info.sh 0755 0 0
+# vi: set shiftwidth=4 tabstop=4 paste filetype=config:
