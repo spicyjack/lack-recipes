@@ -1,4 +1,4 @@
-# name: usbutils
+# package name/version: usbutils / 1:005-3
 # description: example package with comments
 # depends: _base otherpackage1 otherpackage2
 # helpcommand: /usr/bin/somebin --help
@@ -9,18 +9,20 @@
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-# usbutils
+dir /usr 755 0 0
+dir /usr/bin 755 0 0
+file /usr/bin/lsusb /usr/bin/lsusb 755 0 0
+file /usr/bin/usbhid-dump /usr/bin/usbhid-dump 755 0 0
+file /usr/bin/usb-devices /usr/bin/usb-devices 755 0 0
+dir /usr/share 755 0 0
+dir /usr/share/pkgconfig 755 0 0
+file /usr/share/pkgconfig/usbutils.pc /usr/share/pkgconfig/usbutils.pc 644 0 0
+dir /usr/share/misc 755 0 0
+dir /usr/sbin 755 0 0
+file /usr/sbin/update-usbids /usr/sbin/update-usbids 755 0 0
 dir /var 755 0 0
 dir /var/lib 755 0 0
 dir /var/lib/usbutils 755 0 0
 file /var/lib/usbutils/usb.ids /var/lib/usbutils/usb.ids 644 0 0
-dir /usr 755 0 0
-dir /usr/bin 755 0 0
-dir /usr/sbin 755 0 0
-file /usr/sbin/lsusb /usr/sbin/lsusb 755 0 0
-file /usr/sbin/update-usbids /usr/sbin/update-usbids 755 0 0
-dir /usr/share 755 0 0
-dir /usr/share/misc 755 0 0
-slink /usr/bin/lsusb /usr/sbin/lsusb 777 0 0
 slink /usr/share/misc/usb.ids /var/lib/usbutils/usb.ids 777 0 0
-# vi: set shiftwidth=4 tabstop=4 paste:
+# vim: set filetype=config shiftwidth=2 tabstop=2 paste:
