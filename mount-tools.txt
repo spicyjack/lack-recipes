@@ -1,21 +1,25 @@
-# $Id: mount-tools.lenny.txt,v 1.4 2009-08-10 08:38:58 brian Exp $
-# packages: loop-aes-utils
-# both of these files are SUID
-dir /bin 0755 0 0
-file /bin/mount /bin/mount 4755 0 0 
-file /bin/umount /bin/umount 4755 0 0 
-dir /etc 0755 0 0
-file /etc/passwd :LACK_BASE:/etcfiles/passwd 0644 0 0
-file /etc/nsswitch.conf :LACK_BASE:/etcfiles/nsswitch.conf 0644 0 0
-dir /lib 0755 0 0
-file /lib/libnss_files-2.11.3.so /lib/libnss_files-2.11.3.so 0644 0 0
-slink /lib/libnss_files.so.2 /lib/libnss_files-2.11.3.so 0644 0 0  
-file /lib/libnss_dns-2.11.3.so /lib/libnss_dns-2.11.3.so 0644 0 0
-slink /lib/libnss_dns.so.2 /lib/libnss_dns-2.11.3.so 0644 0 0  
-dir /sbin 0755 0 0
-file /sbin/losetup /sbin/losetup 0755 0 0
-file /sbin/swapon /sbin/swapon 0755 0 0
-slink /sbin/swapoff /sbin/swapon 0755 0 0
-dir /usr 0755 0 0
-dir /usr/bin 0755 0 0
-file /usr/bin/gpg /usr/bin/gpg 4755 0 0
+# package name/version: mount / 2.20.1-5.3
+# description: example package with comments
+# depends: _base otherpackage1 otherpackage2
+# helpcommand: /usr/bin/somebin --help
+# versioncommand: /usr/bin/somebin --version
+# examplecommand: /usr/bin/somebin -x -y -z 10
+#
+# dir <name> <mode> <uid> <gid>
+# file <name> <source> <mode> <uid> <gid>
+# slink <new name> <original file> <mode> <uid> <gid>
+#
+dir /sbin 755 0 0
+file /sbin/losetup /sbin/losetup 755 0 0
+file /sbin/swapon /sbin/swapon 755 0 0
+dir /bin 755 0 0
+file /bin/mount /bin/mount 4755 0 0
+file /bin/findmnt /bin/findmnt 755 0 0
+file /bin/umount /bin/umount 4755 0 0
+dir /usr 755 0 0
+dir /usr/share 755 0 0
+dir /usr/share/lintian 755 0 0
+dir /usr/share/lintian/overrides 755 0 0
+file /usr/share/lintian/overrides/mount /usr/share/lintian/overrides/mount 644 0 0
+slink /sbin/swapoff /sbin/swapon 777 0 0
+# vim: set filetype=config shiftwidth=2 tabstop=2 paste:
