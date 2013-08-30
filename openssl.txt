@@ -1,6 +1,6 @@
-# $Id: openssl.txt,v 1.6 2009-03-20 09:10:37 brian Exp $
-# description: OpenSSL
-# depends: _base
+# package name/version: openssl / 1.0.1c-4
+# description: example package with comments
+# depends: _base otherpackage1 otherpackage2
 # helpcommand: /usr/bin/somebin --help
 # versioncommand: /usr/bin/somebin --version
 # examplecommand: /usr/bin/somebin -x -y -z 10
@@ -9,15 +9,27 @@
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-# openssl /usr/lib
-dir /usr 0755 0 0
-dir /usr/lib 0755 0 0
-file /usr/lib/libcrypto.so.0.9.8 /usr/lib/libcrypto.so.0.9.8 0644 0 0
-file /usr/lib/libssl.so.0.9.8 /usr/lib/libssl.so.0.9.8 0644 0 0
-# openssl /usr/lib/ssl
-dir /usr/lib/ssl 0755 0 0
-file /usr/lib/ssl/openssl.cnf /usr/lib/ssl/openssl.cnf 0644 0 0
-# openssl /usr
-dir /usr/bin 0755 0 0
-file /usr/bin/openssl /usr/bin/openssl 0755 0 0
-# vi: set sw=4 ts=4 paste:
+dir /etc 755 0 0
+dir /etc/ssl 755 0 0
+file /etc/ssl/openssl.cnf /etc/ssl/openssl.cnf 644 0 0
+dir /etc/ssl/private 700 0 0
+dir /etc/ssl/certs 755 0 0
+dir /usr 755 0 0
+dir /usr/bin 755 0 0
+file /usr/bin/c_rehash /usr/bin/c_rehash 755 0 0
+file /usr/bin/openssl /usr/bin/openssl 755 0 0
+dir /usr/lib 755 0 0
+dir /usr/lib/ssl 755 0 0
+dir /usr/lib/ssl/misc 755 0 0
+file /usr/lib/ssl/misc/CA.sh /usr/lib/ssl/misc/CA.sh 755 0 0
+file /usr/lib/ssl/misc/tsget /usr/lib/ssl/misc/tsget 755 0 0
+file /usr/lib/ssl/misc/c_hash /usr/lib/ssl/misc/c_hash 755 0 0
+file /usr/lib/ssl/misc/c_issuer /usr/lib/ssl/misc/c_issuer 755 0 0
+file /usr/lib/ssl/misc/c_name /usr/lib/ssl/misc/c_name 755 0 0
+file /usr/lib/ssl/misc/CA.pl /usr/lib/ssl/misc/CA.pl 755 0 0
+file /usr/lib/ssl/misc/c_info /usr/lib/ssl/misc/c_info 755 0 0
+dir /usr/share 755 0 0
+slink /usr/lib/ssl/openssl.cnf /etc/ssl/openssl.cnf 777 0 0
+slink /usr/lib/ssl/private /etc/ssl/private 777 0 0
+slink /usr/lib/ssl/certs /etc/ssl/certs 777 0 0
+# vim: set filetype=config shiftwidth=2 tabstop=2 paste:
