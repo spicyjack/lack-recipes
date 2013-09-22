@@ -18,7 +18,7 @@ branch that holds the files you want to work with;
     git checkout wheezy-32bit
     git checkout wheezy-64bit
 
-## Supported Distributions/Versions/Architectures ##
+## Current Supported Distributions/Versions/Architectures ##
 - Debian Squeeze
   - 32-bit i386
   - 64-bit x86_64
