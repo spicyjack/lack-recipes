@@ -11,7 +11,7 @@
 #
 # a fake tempfile for the X startup scripts
 dir /bin 0755 0 0
-file /bin/fake-tempfile.sh :LACK_BASE:/common/scripts/fake-tempfile.sh 755 0 0
+file /bin/fake-tempfile.sh :LACK_BASE:/scripts/fake-tempfile.sh 755 0 0
 slink /bin/tempfile /bin/fake-tempfile.sh 755 0 0
 # xinit - 1.2.0-2
 dir /usr 755 0 0
@@ -20,7 +20,7 @@ dir /usr/bin 755 0 0
 # copied to :LACK_BASE: due to the usage of 'mktemp --tmpdir' needing to be
 # changed so it can run with busybox
 #file /usr/bin/startx /usr/bin/startx 755 0 0
-file /usr/bin/startx :LACK_BASE:/common/scripts/startx 755 0 0
+file /usr/bin/startx :LACK_BASE:/scripts/startx 755 0 0
 file /usr/bin/xinit /usr/bin/xinit 755 0 0
 dir /etc 755 0 0
 dir /etc/X11 755 0 0

@@ -20,7 +20,7 @@ slink /lib/libreadline.so.5 /lib/libreadline.so.5.2 644 0 0
 dir /etc 755 0 0
 dir /etc/lvm 755 0 0
 file /etc/lvm/lvm.conf /etc/lvm/lvm.conf 644 0 0
-file /etc/lvmtab :LACK_BASE:/common/etcfiles/lvmtab 0644 0 0
+file /etc/lvmtab :LACK_BASE:/etcfiles/lvmtab 0644 0 0
 #dir /etc/init.d 755 0 0
 #file /etc/init.d/lvm2 /etc/init.d/lvm2 755 0 0
 #dir /usr 755 0 0

@@ -11,9 +11,9 @@
 # slink <new name> <original file> <mode> <uid> <gid>
 #
 # show the environment for debugging
-file /etc/scripts/showenv.sh :LACK_BASE:/common/scripts/showenv.sh 0755 0 0
+file /etc/scripts/showenv.sh :LACK_BASE:/scripts/showenv.sh 0755 0 0
 slink /bin/showenv /etc/scripts/showenv.sh 0755 0 0
-file /etc/scripts/get_debug_info.sh :LACK_BASE:/common/scripts/get_debug_info.sh 0755 0 0
+file /etc/scripts/get_debug_info.sh :LACK_BASE:/scripts/get_debug_info.sh 0755 0 0
 slink /bin/get_debug_info /etc/scripts/get_debug_info.sh 0755 0 0
 # debug /usr/bin
 dir /usr 0755 0 0
