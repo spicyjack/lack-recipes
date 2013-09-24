@@ -23,7 +23,7 @@ dir /usr/sbin 755 0 0
 # the stock version of switchconf uses the -v switch, which isn't supported by
 # the busybox version
 file /usr/sbin/switchconf /usr/sbin/switchconf 755 0 0
-#file /usr/sbin/switchconf :BUILD_BASE:/common/scripts/switchconf 755 0 0
+#file /usr/sbin/switchconf :LACK_BASE:/common/scripts/switchconf 755 0 0
 # for the switchconf.lastcfg directory
 dir /var 755 0 0
 dir /var/lib 755 0 0

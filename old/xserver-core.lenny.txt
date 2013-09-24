@@ -41,11 +41,11 @@ slink /usr/bin/X11 /usr/bin 777 0 0
 # xserver-xorg-core
 # /etc/X11
 dir /etc/X11/xserver 755 0 0
-file /etc/X11/Xwrapper.config :BUILD_BASE:/common/etcfiles/Xwrapper.config 600 0 0
+file /etc/X11/Xwrapper.config :LACK_BASE:/common/etcfiles/Xwrapper.config 600 0 0
 #file /etc/X11/xorg.conf /etc/X11/xorg.conf 644 0 0
 # make this file per-project so it can be hacked on more; projects can use the
 # common file if they want to
-#file /etc/X11/xorg.conf :BUILD_BASE:/common/etcfiles/xorg.conf 644 0 0
+#file /etc/X11/xorg.conf :LACK_BASE:/common/etcfiles/xorg.conf 644 0 0
 file /etc/X11/xserver/SecurityPolicy /etc/X11/xserver/SecurityPolicy 644 0 0
 # /usr/bin
 file /usr/bin/Xorg /usr/bin/Xorg 755 0 0

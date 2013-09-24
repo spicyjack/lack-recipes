@@ -27,6 +27,6 @@ slink /var/lib/dhcp /var/lib/dhcp3 0755 0 0
 # dhclient /sbin
 dir /sbin 0755 0 0
 file /sbin/dhclient /sbin/dhclient 0755 0 0
-file /sbin/dhclient-script :BUILD_BASE:/common/scripts/dhclient-script 0755 0 0
+file /sbin/dhclient-script :LACK_BASE:/common/scripts/dhclient-script 0755 0 0
 slink /etc/dhclient-script /sbin/dhclient-script 0755 0 0
 # vi: set sw=4 ts=4 paste:
