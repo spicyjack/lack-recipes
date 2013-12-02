@@ -1,56 +1,416 @@
-# $Id: _baselibs.lenny.txt,v 1.4 2009-01-09 04:09:05 brian Exp $
-# base initramfs system recipe; all other recipies build on top of this one
+# name: _baselibs.txt
+# description: example package with comments
+# depends: _base otherpackage1 otherpackage2
+# helpcommand: /usr/bin/somebin --help
+# versioncommand: /usr/bin/somebin --version
+# examplecommand: /usr/bin/somebin -x -y -z 10
+#
+# dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
-# _baselibs /lib
-file /lib/libbz2.so.1.0.4 /lib/libbz2.so.1.0.4 0644 0 0
-slink /lib/libbz2.so.1.0 /lib/libbz2.so.1.0.4 0644 0 0
-file /lib/libblkid.so.1.1.0 /lib/libblkid.so.1.1.0 0644 0 0
-slink /lib/libblkid.so.1 /lib/libblkid.so.1.1.0 0644 0 0
-file /lib/libncurses.so.5.7 /lib/libncurses.so.5.7 0644 0 0
-slink /lib/libncurses.so.5 /lib/libncurses.so.5.7 0644 0 0
-file /lib/libreadline.so.6.1 /lib/libreadline.so.6.1 0644 0 0
-slink /lib/libreadline.so.6 /lib/libreadline.so.6.1 0644 0 0
-file /lib/libselinux.so.1 /lib/libselinux.so.1 0644 0 0
-file /lib/libsepol.so.1 /lib/libsepol.so.1 0644 0 0
-file /lib/libuuid.so.1.3.0 /lib/libuuid.so.1.3.0 0644 0 0
-slink /lib/libuuid.so.1 /lib/libuuid.so.1.3.0 0644 0 0
-file /lib/libusb-0.1.so.4.4.4 /lib/libusb-0.1.so.4.4.4 0644 0 0
-slink /lib/libusb-0.1.so.4 /lib/libusb-0.1.so.4.4.4 0644 0 0
-file /lib/libwrap.so.0.7.6 /lib/libwrap.so.0.7.6 0644 0 0
-slink /lib/libwrap.so.0 /lib/libwrap.so.0.7.6 0644 0 0
-file /usr/lib/libz.so.1.2.3.4 /usr/lib/libz.so.1.2.3.4 0644 0 0
-slink /usr/lib/libz.so.1 /usr/lib/libz.so.1.2.3.4 0644 0 0
-slink /usr/lib/libz.so /usr/lib/libz.so.1.2.3.4 0644 0 0
-# _baselibs GNU libc and friends
-dir /lib/tls 0755 0 0
-file /lib/ld-2.11.3.so /lib/ld-2.11.3.so 0755 0 0
-slink /lib/ld-linux.so.2 /lib/ld-2.11.3.so 0755 0 0
-file /lib/libc-2.11.3.so /lib/libc-2.11.3.so 0755 0 0
-slink /lib/libc.so.6 /lib/libc-2.11.3.so 0755 0 0
-file /lib/libcrypt-2.11.3.so /lib/libcrypt-2.11.3.so 0644 0 0
-slink /lib/libcrypt.so.1 /lib/libcrypt-2.11.3.so 0644 0 0
-file /lib/libdl-2.11.3.so /lib/libdl-2.11.3.so 0644 0 0
-slink /lib/libdl.so.2 /lib/libdl-2.11.3.so 0644 0 0
-file /lib/librt-2.11.3.so /lib/librt-2.11.3.so 0644 0 0
-slink /lib/librt.so.1 /lib/librt-2.11.3.so 0644 0 0
-file /lib/libm-2.11.3.so /lib/libm-2.11.3.so 0644 0 0
-slink /lib/libm.so.6 /lib/libm-2.11.3.so 0644 0 0
-file /lib/libnsl-2.11.3.so /lib/libnsl-2.11.3.so 0644 0 0
-slink /lib/libnsl.so.1 /lib/libnsl-2.11.3.so 0644 0 0
-file /lib/libpthread-2.11.3.so /lib/libpthread-2.11.3.so 0755 0 0
-slink /lib/libpthread.so.0 /lib/libpthread-2.11.3.so 0755 0 0
-file /lib/libresolv-2.11.3.so /lib/libresolv-2.11.3.so 0644 0 0
-slink /lib/libresolv.so.2 /lib/libresolv-2.11.3.so 0644 0 0
-file /lib/libutil-2.11.3.so /lib/libutil-2.11.3.so 0644 0 0
-slink /lib/libutil.so.1 /lib/libutil-2.11.3.so 0644 0 0
-# _baselibs /lib/terminfo
-dir /lib/terminfo 0755 0 0
-dir /lib/terminfo/l 0755 0 0
-file /lib/terminfo/l/linux /lib/terminfo/l/linux 0644 0 0
-# libgcc1
+#
+# name: libc6 - 2.13-38
 dir /usr/share/lintian 755 0 0
 dir /usr/share/lintian/overrides 755 0 0
+file /usr/share/lintian/overrides/libc6 /usr/share/lintian/overrides/libc6 644 0 0
+dir /usr/lib/i386-linux-gnu 755 0 0
+dir /usr/lib/i386-linux-gnu/gconv 755 0 0
+file /usr/lib/i386-linux-gnu/gconv/HP-THAI8.so /usr/lib/i386-linux-gnu/gconv/HP-THAI8.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO8859-9E.so /usr/lib/i386-linux-gnu/gconv/ISO8859-9E.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/BIG5.so /usr/lib/i386-linux-gnu/gconv/BIG5.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM256.so /usr/lib/i386-linux-gnu/gconv/IBM256.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1164.so /usr/lib/i386-linux-gnu/gconv/IBM1164.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/MAC-IS.so /usr/lib/i386-linux-gnu/gconv/MAC-IS.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO_10367-BOX.so /usr/lib/i386-linux-gnu/gconv/ISO_10367-BOX.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO646.so /usr/lib/i386-linux-gnu/gconv/ISO646.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EBCDIC-US.so /usr/lib/i386-linux-gnu/gconv/EBCDIC-US.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/CP1258.so /usr/lib/i386-linux-gnu/gconv/CP1258.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO8859-3.so /usr/lib/i386-linux-gnu/gconv/ISO8859-3.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EBCDIC-AT-DE-A.so /usr/lib/i386-linux-gnu/gconv/EBCDIC-AT-DE-A.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM943.so /usr/lib/i386-linux-gnu/gconv/IBM943.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM9030.so /usr/lib/i386-linux-gnu/gconv/IBM9030.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EUC-JP.so /usr/lib/i386-linux-gnu/gconv/EUC-JP.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/GREEK-CCITT.so /usr/lib/i386-linux-gnu/gconv/GREEK-CCITT.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EBCDIC-CA-FR.so /usr/lib/i386-linux-gnu/gconv/EBCDIC-CA-FR.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO8859-14.so /usr/lib/i386-linux-gnu/gconv/ISO8859-14.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/MAC-CENTRALEUROPE.so /usr/lib/i386-linux-gnu/gconv/MAC-CENTRALEUROPE.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/GEORGIAN-PS.so /usr/lib/i386-linux-gnu/gconv/GEORGIAN-PS.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EBCDIC-DK-NO.so /usr/lib/i386-linux-gnu/gconv/EBCDIC-DK-NO.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/INIS-8.so /usr/lib/i386-linux-gnu/gconv/INIS-8.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM285.so /usr/lib/i386-linux-gnu/gconv/IBM285.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/TSCII.so /usr/lib/i386-linux-gnu/gconv/TSCII.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM280.so /usr/lib/i386-linux-gnu/gconv/IBM280.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/CP775.so /usr/lib/i386-linux-gnu/gconv/CP775.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/gconv-modules.cache /usr/lib/i386-linux-gnu/gconv/gconv-modules.cache 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO-2022-CN-EXT.so /usr/lib/i386-linux-gnu/gconv/ISO-2022-CN-EXT.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/CP1253.so /usr/lib/i386-linux-gnu/gconv/CP1253.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM284.so /usr/lib/i386-linux-gnu/gconv/IBM284.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM275.so /usr/lib/i386-linux-gnu/gconv/IBM275.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EBCDIC-FI-SE-A.so /usr/lib/i386-linux-gnu/gconv/EBCDIC-FI-SE-A.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM281.so /usr/lib/i386-linux-gnu/gconv/IBM281.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/GBGBK.so /usr/lib/i386-linux-gnu/gconv/GBGBK.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/TCVN5712-1.so /usr/lib/i386-linux-gnu/gconv/TCVN5712-1.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM861.so /usr/lib/i386-linux-gnu/gconv/IBM861.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1145.so /usr/lib/i386-linux-gnu/gconv/IBM1145.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO8859-13.so /usr/lib/i386-linux-gnu/gconv/ISO8859-13.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/VISCII.so /usr/lib/i386-linux-gnu/gconv/VISCII.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IEC_P27-1.so /usr/lib/i386-linux-gnu/gconv/IEC_P27-1.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM904.so /usr/lib/i386-linux-gnu/gconv/IBM904.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM874.so /usr/lib/i386-linux-gnu/gconv/IBM874.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM290.so /usr/lib/i386-linux-gnu/gconv/IBM290.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/libJISX0213.so /usr/lib/i386-linux-gnu/gconv/libJISX0213.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1026.so /usr/lib/i386-linux-gnu/gconv/IBM1026.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/UTF-16.so /usr/lib/i386-linux-gnu/gconv/UTF-16.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EBCDIC-ES.so /usr/lib/i386-linux-gnu/gconv/EBCDIC-ES.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM278.so /usr/lib/i386-linux-gnu/gconv/IBM278.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM4899.so /usr/lib/i386-linux-gnu/gconv/IBM4899.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM856.so /usr/lib/i386-linux-gnu/gconv/IBM856.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM860.so /usr/lib/i386-linux-gnu/gconv/IBM860.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1160.so /usr/lib/i386-linux-gnu/gconv/IBM1160.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EUC-JISX0213.so /usr/lib/i386-linux-gnu/gconv/EUC-JISX0213.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EBCDIC-DK-NO-A.so /usr/lib/i386-linux-gnu/gconv/EBCDIC-DK-NO-A.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM277.so /usr/lib/i386-linux-gnu/gconv/IBM277.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM297.so /usr/lib/i386-linux-gnu/gconv/IBM297.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM901.so /usr/lib/i386-linux-gnu/gconv/IBM901.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM500.so /usr/lib/i386-linux-gnu/gconv/IBM500.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM037.so /usr/lib/i386-linux-gnu/gconv/IBM037.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1371.so /usr/lib/i386-linux-gnu/gconv/IBM1371.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/CSN_369103.so /usr/lib/i386-linux-gnu/gconv/CSN_369103.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1149.so /usr/lib/i386-linux-gnu/gconv/IBM1149.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/CP932.so /usr/lib/i386-linux-gnu/gconv/CP932.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1154.so /usr/lib/i386-linux-gnu/gconv/IBM1154.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1146.so /usr/lib/i386-linux-gnu/gconv/IBM1146.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1046.so /usr/lib/i386-linux-gnu/gconv/IBM1046.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM274.so /usr/lib/i386-linux-gnu/gconv/IBM274.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1025.so /usr/lib/i386-linux-gnu/gconv/IBM1025.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/NATS-DANO.so /usr/lib/i386-linux-gnu/gconv/NATS-DANO.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EUC-JP-MS.so /usr/lib/i386-linux-gnu/gconv/EUC-JP-MS.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/LATIN-GREEK.so /usr/lib/i386-linux-gnu/gconv/LATIN-GREEK.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1390.so /usr/lib/i386-linux-gnu/gconv/IBM1390.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM9066.so /usr/lib/i386-linux-gnu/gconv/IBM9066.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM803.so /usr/lib/i386-linux-gnu/gconv/IBM803.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM038.so /usr/lib/i386-linux-gnu/gconv/IBM038.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/SAMI-WS2.so /usr/lib/i386-linux-gnu/gconv/SAMI-WS2.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1162.so /usr/lib/i386-linux-gnu/gconv/IBM1162.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/MAC-UK.so /usr/lib/i386-linux-gnu/gconv/MAC-UK.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/libKSC.so /usr/lib/i386-linux-gnu/gconv/libKSC.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM857.so /usr/lib/i386-linux-gnu/gconv/IBM857.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM4517.so /usr/lib/i386-linux-gnu/gconv/IBM4517.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM866NAV.so /usr/lib/i386-linux-gnu/gconv/IBM866NAV.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EUC-CN.so /usr/lib/i386-linux-gnu/gconv/EUC-CN.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EBCDIC-FI-SE.so /usr/lib/i386-linux-gnu/gconv/EBCDIC-FI-SE.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO-2022-KR.so /usr/lib/i386-linux-gnu/gconv/ISO-2022-KR.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/UNICODE.so /usr/lib/i386-linux-gnu/gconv/UNICODE.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO8859-2.so /usr/lib/i386-linux-gnu/gconv/ISO8859-2.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM871.so /usr/lib/i386-linux-gnu/gconv/IBM871.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1132.so /usr/lib/i386-linux-gnu/gconv/IBM1132.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1129.so /usr/lib/i386-linux-gnu/gconv/IBM1129.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/CP1125.so /usr/lib/i386-linux-gnu/gconv/CP1125.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1399.so /usr/lib/i386-linux-gnu/gconv/IBM1399.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/GEORGIAN-ACADEMY.so /usr/lib/i386-linux-gnu/gconv/GEORGIAN-ACADEMY.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/gconv-modules /usr/lib/i386-linux-gnu/gconv/gconv-modules 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ANSI_X3.110.so /usr/lib/i386-linux-gnu/gconv/ANSI_X3.110.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1097.so /usr/lib/i386-linux-gnu/gconv/IBM1097.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM863.so /usr/lib/i386-linux-gnu/gconv/IBM863.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM420.so /usr/lib/i386-linux-gnu/gconv/IBM420.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1112.so /usr/lib/i386-linux-gnu/gconv/IBM1112.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM424.so /usr/lib/i386-linux-gnu/gconv/IBM424.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO8859-11.so /usr/lib/i386-linux-gnu/gconv/ISO8859-11.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/SHIFT_JISX0213.so /usr/lib/i386-linux-gnu/gconv/SHIFT_JISX0213.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM868.so /usr/lib/i386-linux-gnu/gconv/IBM868.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/CP737.so /usr/lib/i386-linux-gnu/gconv/CP737.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/HP-TURKISH8.so /usr/lib/i386-linux-gnu/gconv/HP-TURKISH8.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO8859-8.so /usr/lib/i386-linux-gnu/gconv/ISO8859-8.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/CP1250.so /usr/lib/i386-linux-gnu/gconv/CP1250.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/JOHAB.so /usr/lib/i386-linux-gnu/gconv/JOHAB.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EUC-KR.so /usr/lib/i386-linux-gnu/gconv/EUC-KR.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO_5428.so /usr/lib/i386-linux-gnu/gconv/ISO_5428.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM937.so /usr/lib/i386-linux-gnu/gconv/IBM937.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/GOST_19768-74.so /usr/lib/i386-linux-gnu/gconv/GOST_19768-74.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM437.so /usr/lib/i386-linux-gnu/gconv/IBM437.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO_5427.so /usr/lib/i386-linux-gnu/gconv/ISO_5427.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM12712.so /usr/lib/i386-linux-gnu/gconv/IBM12712.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/GREEK7-OLD.so /usr/lib/i386-linux-gnu/gconv/GREEK7-OLD.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/MAC-SAMI.so /usr/lib/i386-linux-gnu/gconv/MAC-SAMI.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/KOI8-T.so /usr/lib/i386-linux-gnu/gconv/KOI8-T.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/T.61.so /usr/lib/i386-linux-gnu/gconv/T.61.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/GBBIG5.so /usr/lib/i386-linux-gnu/gconv/GBBIG5.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1166.so /usr/lib/i386-linux-gnu/gconv/IBM1166.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM864.so /usr/lib/i386-linux-gnu/gconv/IBM864.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/TIS-620.so /usr/lib/i386-linux-gnu/gconv/TIS-620.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/HP-GREEK8.so /usr/lib/i386-linux-gnu/gconv/HP-GREEK8.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1130.so /usr/lib/i386-linux-gnu/gconv/IBM1130.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/MIK.so /usr/lib/i386-linux-gnu/gconv/MIK.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/INIS.so /usr/lib/i386-linux-gnu/gconv/INIS.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM273.so /usr/lib/i386-linux-gnu/gconv/IBM273.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM875.so /usr/lib/i386-linux-gnu/gconv/IBM875.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/GBK.so /usr/lib/i386-linux-gnu/gconv/GBK.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM903.so /usr/lib/i386-linux-gnu/gconv/IBM903.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1388.so /usr/lib/i386-linux-gnu/gconv/IBM1388.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/UHC.so /usr/lib/i386-linux-gnu/gconv/UHC.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM852.so /usr/lib/i386-linux-gnu/gconv/IBM852.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM930.so /usr/lib/i386-linux-gnu/gconv/IBM930.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/UTF-7.so /usr/lib/i386-linux-gnu/gconv/UTF-7.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/MACINTOSH.so /usr/lib/i386-linux-gnu/gconv/MACINTOSH.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1140.so /usr/lib/i386-linux-gnu/gconv/IBM1140.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1167.so /usr/lib/i386-linux-gnu/gconv/IBM1167.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/PT154.so /usr/lib/i386-linux-gnu/gconv/PT154.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1153.so /usr/lib/i386-linux-gnu/gconv/IBM1153.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EBCDIC-UK.so /usr/lib/i386-linux-gnu/gconv/EBCDIC-UK.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO8859-9.so /usr/lib/i386-linux-gnu/gconv/ISO8859-9.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1137.so /usr/lib/i386-linux-gnu/gconv/IBM1137.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM921.so /usr/lib/i386-linux-gnu/gconv/IBM921.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/libISOIR165.so /usr/lib/i386-linux-gnu/gconv/libISOIR165.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EBCDIC-PT.so /usr/lib/i386-linux-gnu/gconv/EBCDIC-PT.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1123.so /usr/lib/i386-linux-gnu/gconv/IBM1123.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO8859-4.so /usr/lib/i386-linux-gnu/gconv/ISO8859-4.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO_2033.so /usr/lib/i386-linux-gnu/gconv/ISO_2033.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO8859-1.so /usr/lib/i386-linux-gnu/gconv/ISO8859-1.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/libGB.so /usr/lib/i386-linux-gnu/gconv/libGB.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EBCDIC-AT-DE.so /usr/lib/i386-linux-gnu/gconv/EBCDIC-AT-DE.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO_6937.so /usr/lib/i386-linux-gnu/gconv/ISO_6937.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/CP1252.so /usr/lib/i386-linux-gnu/gconv/CP1252.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/UTF-32.so /usr/lib/i386-linux-gnu/gconv/UTF-32.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM869.so /usr/lib/i386-linux-gnu/gconv/IBM869.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1142.so /usr/lib/i386-linux-gnu/gconv/IBM1142.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO_5427-EXT.so /usr/lib/i386-linux-gnu/gconv/ISO_5427-EXT.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM905.so /usr/lib/i386-linux-gnu/gconv/IBM905.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ARMSCII-8.so /usr/lib/i386-linux-gnu/gconv/ARMSCII-8.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/libCNS.so /usr/lib/i386-linux-gnu/gconv/libCNS.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/CP1257.so /usr/lib/i386-linux-gnu/gconv/CP1257.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/CP1251.so /usr/lib/i386-linux-gnu/gconv/CP1251.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM902.so /usr/lib/i386-linux-gnu/gconv/IBM902.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO-2022-JP.so /usr/lib/i386-linux-gnu/gconv/ISO-2022-JP.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM880.so /usr/lib/i386-linux-gnu/gconv/IBM880.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1133.so /usr/lib/i386-linux-gnu/gconv/IBM1133.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/CP10007.so /usr/lib/i386-linux-gnu/gconv/CP10007.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/CP1256.so /usr/lib/i386-linux-gnu/gconv/CP1256.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/RK1048.so /usr/lib/i386-linux-gnu/gconv/RK1048.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM16804.so /usr/lib/i386-linux-gnu/gconv/IBM16804.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1155.so /usr/lib/i386-linux-gnu/gconv/IBM1155.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1163.so /usr/lib/i386-linux-gnu/gconv/IBM1163.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/CP1255.so /usr/lib/i386-linux-gnu/gconv/CP1255.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/HP-ROMAN8.so /usr/lib/i386-linux-gnu/gconv/HP-ROMAN8.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM939.so /usr/lib/i386-linux-gnu/gconv/IBM939.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1122.so /usr/lib/i386-linux-gnu/gconv/IBM1122.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/INIS-CYRILLIC.so /usr/lib/i386-linux-gnu/gconv/INIS-CYRILLIC.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EUC-TW.so /usr/lib/i386-linux-gnu/gconv/EUC-TW.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1008_420.so /usr/lib/i386-linux-gnu/gconv/IBM1008_420.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1147.so /usr/lib/i386-linux-gnu/gconv/IBM1147.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO8859-6.so /usr/lib/i386-linux-gnu/gconv/ISO8859-6.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1158.so /usr/lib/i386-linux-gnu/gconv/IBM1158.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM932.so /usr/lib/i386-linux-gnu/gconv/IBM932.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/GB18030.so /usr/lib/i386-linux-gnu/gconv/GB18030.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO-2022-CN.so /usr/lib/i386-linux-gnu/gconv/ISO-2022-CN.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM866.so /usr/lib/i386-linux-gnu/gconv/IBM866.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1124.so /usr/lib/i386-linux-gnu/gconv/IBM1124.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM933.so /usr/lib/i386-linux-gnu/gconv/IBM933.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EBCDIC-IT.so /usr/lib/i386-linux-gnu/gconv/EBCDIC-IT.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM922.so /usr/lib/i386-linux-gnu/gconv/IBM922.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO-IR-197.so /usr/lib/i386-linux-gnu/gconv/ISO-IR-197.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO_6937-2.so /usr/lib/i386-linux-gnu/gconv/ISO_6937-2.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/KOI8-U.so /usr/lib/i386-linux-gnu/gconv/KOI8-U.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO8859-15.so /usr/lib/i386-linux-gnu/gconv/ISO8859-15.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO8859-5.so /usr/lib/i386-linux-gnu/gconv/ISO8859-5.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/GREEK7.so /usr/lib/i386-linux-gnu/gconv/GREEK7.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/DEC-MCS.so /usr/lib/i386-linux-gnu/gconv/DEC-MCS.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EBCDIC-ES-S.so /usr/lib/i386-linux-gnu/gconv/EBCDIC-ES-S.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/CWI.so /usr/lib/i386-linux-gnu/gconv/CWI.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/CP1254.so /usr/lib/i386-linux-gnu/gconv/CP1254.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO-IR-209.so /usr/lib/i386-linux-gnu/gconv/ISO-IR-209.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1008.so /usr/lib/i386-linux-gnu/gconv/IBM1008.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM865.so /usr/lib/i386-linux-gnu/gconv/IBM865.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM5347.so /usr/lib/i386-linux-gnu/gconv/IBM5347.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO-2022-JP-3.so /usr/lib/i386-linux-gnu/gconv/ISO-2022-JP-3.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/KOI-8.so /usr/lib/i386-linux-gnu/gconv/KOI-8.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1157.so /usr/lib/i386-linux-gnu/gconv/IBM1157.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/LATIN-GREEK-1.so /usr/lib/i386-linux-gnu/gconv/LATIN-GREEK-1.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EBCDIC-IS-FRISS.so /usr/lib/i386-linux-gnu/gconv/EBCDIC-IS-FRISS.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ECMA-CYRILLIC.so /usr/lib/i386-linux-gnu/gconv/ECMA-CYRILLIC.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1156.so /usr/lib/i386-linux-gnu/gconv/IBM1156.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1047.so /usr/lib/i386-linux-gnu/gconv/IBM1047.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO8859-16.so /usr/lib/i386-linux-gnu/gconv/ISO8859-16.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM870.so /usr/lib/i386-linux-gnu/gconv/IBM870.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/BRF.so /usr/lib/i386-linux-gnu/gconv/BRF.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/BIG5HKSCS.so /usr/lib/i386-linux-gnu/gconv/BIG5HKSCS.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM918.so /usr/lib/i386-linux-gnu/gconv/IBM918.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO8859-7.so /usr/lib/i386-linux-gnu/gconv/ISO8859-7.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1141.so /usr/lib/i386-linux-gnu/gconv/IBM1141.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EBCDIC-FR.so /usr/lib/i386-linux-gnu/gconv/EBCDIC-FR.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM9448.so /usr/lib/i386-linux-gnu/gconv/IBM9448.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ASMO_449.so /usr/lib/i386-linux-gnu/gconv/ASMO_449.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1161.so /usr/lib/i386-linux-gnu/gconv/IBM1161.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM851.so /usr/lib/i386-linux-gnu/gconv/IBM851.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM855.so /usr/lib/i386-linux-gnu/gconv/IBM855.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1364.so /usr/lib/i386-linux-gnu/gconv/IBM1364.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/libJIS.so /usr/lib/i386-linux-gnu/gconv/libJIS.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1004.so /usr/lib/i386-linux-gnu/gconv/IBM1004.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO8859-10.so /usr/lib/i386-linux-gnu/gconv/ISO8859-10.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISIRI-3342.so /usr/lib/i386-linux-gnu/gconv/ISIRI-3342.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/NATS-SEFI.so /usr/lib/i386-linux-gnu/gconv/NATS-SEFI.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM935.so /usr/lib/i386-linux-gnu/gconv/IBM935.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/KOI8-R.so /usr/lib/i386-linux-gnu/gconv/KOI8-R.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM4909.so /usr/lib/i386-linux-gnu/gconv/IBM4909.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/ISO_11548-1.so /usr/lib/i386-linux-gnu/gconv/ISO_11548-1.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/EBCDIC-ES-A.so /usr/lib/i386-linux-gnu/gconv/EBCDIC-ES-A.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM862.so /usr/lib/i386-linux-gnu/gconv/IBM862.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1148.so /usr/lib/i386-linux-gnu/gconv/IBM1148.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1143.so /usr/lib/i386-linux-gnu/gconv/IBM1143.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/HP-ROMAN9.so /usr/lib/i386-linux-gnu/gconv/HP-ROMAN9.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/KOI8-RU.so /usr/lib/i386-linux-gnu/gconv/KOI8-RU.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM891.so /usr/lib/i386-linux-gnu/gconv/IBM891.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM1144.so /usr/lib/i386-linux-gnu/gconv/IBM1144.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM423.so /usr/lib/i386-linux-gnu/gconv/IBM423.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM850.so /usr/lib/i386-linux-gnu/gconv/IBM850.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/SJIS.so /usr/lib/i386-linux-gnu/gconv/SJIS.so 644 0 0
+file /usr/lib/i386-linux-gnu/gconv/IBM4971.so /usr/lib/i386-linux-gnu/gconv/IBM4971.so 644 0 0
+dir /lib/i386-linux-gnu 755 0 0
+file /lib/i386-linux-gnu/libSegFault.so /lib/i386-linux-gnu/libSegFault.so 644 0 0
+file /lib/i386-linux-gnu/libmemusage.so /lib/i386-linux-gnu/libmemusage.so 644 0 0
+file /lib/i386-linux-gnu/libanl-2.13.so /lib/i386-linux-gnu/libanl-2.13.so 644 0 0
+file /lib/i386-linux-gnu/libnss_nisplus-2.13.so /lib/i386-linux-gnu/libnss_nisplus-2.13.so 644 0 0
+file /lib/i386-linux-gnu/libutil-2.13.so /lib/i386-linux-gnu/libutil-2.13.so 644 0 0
+file /lib/i386-linux-gnu/libpthread-2.13.so /lib/i386-linux-gnu/libpthread-2.13.so 755 0 0
+file /lib/i386-linux-gnu/libBrokenLocale-2.13.so /lib/i386-linux-gnu/libBrokenLocale-2.13.so 644 0 0
+file /lib/i386-linux-gnu/libpcprofile.so /lib/i386-linux-gnu/libpcprofile.so 644 0 0
+file /lib/i386-linux-gnu/libdl-2.13.so /lib/i386-linux-gnu/libdl-2.13.so 644 0 0
+file /lib/i386-linux-gnu/libnss_files-2.13.so /lib/i386-linux-gnu/libnss_files-2.13.so 644 0 0
+file /lib/i386-linux-gnu/librt-2.13.so /lib/i386-linux-gnu/librt-2.13.so 644 0 0
+file /lib/i386-linux-gnu/libnss_compat-2.13.so /lib/i386-linux-gnu/libnss_compat-2.13.so 644 0 0
+file /lib/i386-linux-gnu/libm-2.13.so /lib/i386-linux-gnu/libm-2.13.so 644 0 0
+file /lib/i386-linux-gnu/libnss_hesiod-2.13.so /lib/i386-linux-gnu/libnss_hesiod-2.13.so 644 0 0
+file /lib/i386-linux-gnu/libcidn-2.13.so /lib/i386-linux-gnu/libcidn-2.13.so 644 0 0
+file /lib/i386-linux-gnu/libc-2.13.so /lib/i386-linux-gnu/libc-2.13.so 755 0 0
+file /lib/i386-linux-gnu/libcrypt-2.13.so /lib/i386-linux-gnu/libcrypt-2.13.so 644 0 0
+file /lib/i386-linux-gnu/libresolv-2.13.so /lib/i386-linux-gnu/libresolv-2.13.so 644 0 0
+file /lib/i386-linux-gnu/ld-2.13.so /lib/i386-linux-gnu/ld-2.13.so 755 0 0
+file /lib/i386-linux-gnu/libnsl-2.13.so /lib/i386-linux-gnu/libnsl-2.13.so 644 0 0
+file /lib/i386-linux-gnu/libnss_dns-2.13.so /lib/i386-linux-gnu/libnss_dns-2.13.so 644 0 0
+file /lib/i386-linux-gnu/libnss_nis-2.13.so /lib/i386-linux-gnu/libnss_nis-2.13.so 644 0 0
+file /lib/i386-linux-gnu/libthread_db-1.0.so /lib/i386-linux-gnu/libthread_db-1.0.so 644 0 0
+dir /etc/ld.so.conf.d 755 0 0
+file /etc/ld.so.conf.d/i486-linux-gnu.conf /etc/ld.so.conf.d/i486-linux-gnu.conf 644 0 0
+slink /lib/i386-linux-gnu/libnss_hesiod.so.2 /lib/i386-linux-gnu/libnss_hesiod-2.13.so 777 0 0
+slink /lib/i386-linux-gnu/libcidn.so.1 /lib/i386-linux-gnu/libcidn-2.13.so 777 0 0
+slink /lib/i386-linux-gnu/libdl.so.2 /lib/i386-linux-gnu/libdl-2.13.so 777 0 0
+slink /lib/i386-linux-gnu/libthread_db.so.1 /lib/i386-linux-gnu/libthread_db-1.0.so 777 0 0
+slink /lib/i386-linux-gnu/libnsl.so.1 /lib/i386-linux-gnu/libnsl-2.13.so 777 0 0
+slink /lib/i386-linux-gnu/libnss_compat.so.2 /lib/i386-linux-gnu/libnss_compat-2.13.so 777 0 0
+slink /lib/i386-linux-gnu/libutil.so.1 /lib/i386-linux-gnu/libutil-2.13.so 777 0 0
+slink /lib/i386-linux-gnu/libnss_files.so.2 /lib/i386-linux-gnu/libnss_files-2.13.so 777 0 0
+slink /lib/i386-linux-gnu/libresolv.so.2 /lib/i386-linux-gnu/libresolv-2.13.so 777 0 0
+slink /lib/i386-linux-gnu/libnss_nisplus.so.2 /lib/i386-linux-gnu/libnss_nisplus-2.13.so 777 0 0
+slink /lib/i386-linux-gnu/libcrypt.so.1 /lib/i386-linux-gnu/libcrypt-2.13.so 777 0 0
+slink /lib/i386-linux-gnu/libm.so.6 /lib/i386-linux-gnu/libm-2.13.so 777 0 0
+slink /lib/i386-linux-gnu/libc.so.6 /lib/i386-linux-gnu/libc-2.13.so 777 0 0
+slink /lib/i386-linux-gnu/libnss_nis.so.2 /lib/i386-linux-gnu/libnss_nis-2.13.so 777 0 0
+slink /lib/i386-linux-gnu/libanl.so.1 /lib/i386-linux-gnu/libanl-2.13.so 777 0 0
+slink /lib/i386-linux-gnu/librt.so.1 /lib/i386-linux-gnu/librt-2.13.so 777 0 0
+slink /lib/i386-linux-gnu/libnss_dns.so.2 /lib/i386-linux-gnu/libnss_dns-2.13.so 777 0 0
+slink /lib/i386-linux-gnu/ld-linux.so.2 /lib/i386-linux-gnu/ld-2.13.so 777 0 0
+slink /lib/i386-linux-gnu/libpthread.so.0 /lib/i386-linux-gnu/libpthread-2.13.so 777 0 0
+slink /lib/i386-linux-gnu/libBrokenLocale.so.1 /lib/i386-linux-gnu/libBrokenLocale-2.13.so 777 0 0
+slink /lib/ld-linux.so.2 /lib/i386-linux-gnu/ld-2.13.so 777 0 0
+# libgcc1 - 1:4.7.2-5
+file /lib/i386-linux-gnu/libgcc_s.so.1 /lib/i386-linux-gnu/libgcc_s.so.1 644 0 0
 file /usr/share/lintian/overrides/libgcc1 /usr/share/lintian/overrides/libgcc1 644 0 0
-file /lib/libgcc_s.so.1 /lib/libgcc_s.so.1 644 0 0
-
+# libbz2-1.0 - 1.0.6-4
+file /lib/i386-linux-gnu/libbz2.so.1.0.4 /lib/i386-linux-gnu/libbz2.so.1.0.4 644 0 0
+slink /lib/i386-linux-gnu/libbz2.so.1.0 /lib/i386-linux-gnu/libbz2.so.1.0.4 777 0 0
+slink /lib/i386-linux-gnu/libbz2.so.1 /lib/i386-linux-gnu/libbz2.so.1.0.4 777 0 0
+# libblkid1 - 2.20.1-5.3
+file /lib/i386-linux-gnu/libblkid.so.1.1.0 /lib/i386-linux-gnu/libblkid.so.1.1.0 644 0 0
+slink /lib/i386-linux-gnu/libblkid.so.1 /lib/i386-linux-gnu/libblkid.so.1.1.0 777 0 0
+# libncursesw5 - 5.9-10
+file /lib/i386-linux-gnu/libncursesw.so.5.9 /lib/i386-linux-gnu/libncursesw.so.5.9 644 0 0
+file /usr/lib/i386-linux-gnu/libmenuw.so.5.9 /usr/lib/i386-linux-gnu/libmenuw.so.5.9 644 0 0
+file /usr/lib/i386-linux-gnu/libformw.so.5.9 /usr/lib/i386-linux-gnu/libformw.so.5.9 644 0 0
+file /usr/lib/i386-linux-gnu/libpanelw.so.5.9 /usr/lib/i386-linux-gnu/libpanelw.so.5.9 644 0 0
+slink /lib/i386-linux-gnu/libncursesw.so.5 /lib/i386-linux-gnu/libncursesw.so.5.9 777 0 0
+slink /usr/lib/i386-linux-gnu/libmenuw.so.5 /usr/lib/i386-linux-gnu/libmenuw.so.5.9 777 0 0
+slink /usr/lib/i386-linux-gnu/libpanelw.so.5 /usr/lib/i386-linux-gnu/libpanelw.so.5.9 777 0 0
+slink /usr/lib/i386-linux-gnu/libformw.so.5 /usr/lib/i386-linux-gnu/libformw.so.5.9 777 0 0
+# ncurses-base - 5.9-10
+dir /lib/terminfo 755 0 0
+dir /lib/terminfo/r 755 0 0
+file /lib/terminfo/r/rxvt-unicode /lib/terminfo/r/rxvt-unicode 644 0 0
+file /lib/terminfo/r/rxvt /lib/terminfo/r/rxvt 644 0 0
+file /lib/terminfo/r/rxvt-basic /lib/terminfo/r/rxvt-basic 644 0 0
+#dir /lib/terminfo/x 755 0 0
+file /lib/terminfo/x/xterm-color /lib/terminfo/x/xterm-color 644 0 0
+#file /lib/terminfo/x/xterm-r6 /lib/terminfo/x/xterm-r6 644 0 0
+#file /lib/terminfo/x/xterm-mono /lib/terminfo/x/xterm-mono 644 0 0
+#file /lib/terminfo/x/xterm-r5 /lib/terminfo/x/xterm-r5 644 0 0
+#file /lib/terminfo/x/xterm-vt220 /lib/terminfo/x/xterm-vt220 644 0 0
+file /lib/terminfo/x/xterm /lib/terminfo/x/xterm 644 0 0
+file /lib/terminfo/x/xterm-256color /lib/terminfo/x/xterm-256color 644 0 0
+#file /lib/terminfo/x/xterm-xfree86 /lib/terminfo/x/xterm-xfree86 644 0 0
+dir /lib/terminfo/s 755 0 0
+file /lib/terminfo/s/screen /lib/terminfo/s/screen 644 0 0
+#file /lib/terminfo/s/screen-bce /lib/terminfo/s/screen-bce 644 0 0
+#file /lib/terminfo/s/screen-256color-bce /lib/terminfo/s/screen-256color-bce 644 0 0
+file /lib/terminfo/s/screen-w /lib/terminfo/s/screen-w 644 0 0
+#file /lib/terminfo/s/sun /lib/terminfo/s/sun 644 0 0
+#file /lib/terminfo/s/screen-s /lib/terminfo/s/screen-s 644 0 0
+#file /lib/terminfo/s/screen-256color /lib/terminfo/s/screen-256color 644 0 0
+dir /lib/terminfo/a 755 0 0
+file /lib/terminfo/a/ansi /lib/terminfo/a/ansi 644 0 0
+#dir /lib/terminfo/w 755 0 0
+#file /lib/terminfo/w/wsvt25m /lib/terminfo/w/wsvt25m 644 0 0
+#file /lib/terminfo/w/wsvt25 /lib/terminfo/w/wsvt25 644 0 0
+#dir /lib/terminfo/p 755 0 0
+#file /lib/terminfo/p/pcansi /lib/terminfo/p/pcansi 644 0 0
+dir /lib/terminfo/l 755 0 0
+file /lib/terminfo/l/linux /lib/terminfo/l/linux 644 0 0
+#dir /lib/terminfo/E 755 0 0
+#file /lib/terminfo/E/Eterm /lib/terminfo/E/Eterm 644 0 0
+dir /lib/terminfo/v 755 0 0
+file /lib/terminfo/v/vt102 /lib/terminfo/v/vt102 644 0 0
+file /lib/terminfo/v/vt52 /lib/terminfo/v/vt52 644 0 0
+file /lib/terminfo/v/vt100 /lib/terminfo/v/vt100 644 0 0
+file /lib/terminfo/v/vt220 /lib/terminfo/v/vt220 644 0 0
+dir /lib/terminfo/d 755 0 0
+file /lib/terminfo/d/dumb /lib/terminfo/d/dumb 644 0 0
+#dir /lib/terminfo/m 755 0 0
+#file /lib/terminfo/m/mach-bold /lib/terminfo/m/mach-bold 644 0 0
+#file /lib/terminfo/m/mach-gnu-color /lib/terminfo/m/mach-gnu-color 644 0 0
+#file /lib/terminfo/m/mach /lib/terminfo/m/mach 644 0 0
+#file /lib/terminfo/m/mach-color /lib/terminfo/m/mach-color 644 0 0
+#file /lib/terminfo/m/mach-gnu /lib/terminfo/m/mach-gnu 644 0 0
+#dir /lib/terminfo/c 755 0 0
+#file /lib/terminfo/c/cons25 /lib/terminfo/c/cons25 644 0 0
+#file /lib/terminfo/c/cons25-debian /lib/terminfo/c/cons25-debian 644 0 0
+#file /lib/terminfo/c/cygwin /lib/terminfo/c/cygwin 644 0 0
+#dir /lib/terminfo/h 755 0 0
+#file /lib/terminfo/h/hurd /lib/terminfo/h/hurd 644 0 0
+dir /etc/terminfo 755 0 0
+file /etc/terminfo/README /etc/terminfo/README 644 0 0
+file /usr/share/lintian/overrides/ncurses-base /usr/share/lintian/overrides/ncurses-base 644 0 0
+dir /usr/share/tabset 755 0 0
+file /usr/share/tabset/std /usr/share/tabset/std 644 0 0
+file /usr/share/tabset/vt300 /usr/share/tabset/vt300 644 0 0
+file /usr/share/tabset/vt100 /usr/share/tabset/vt100 644 0 0
+file /usr/share/tabset/stdcrt /usr/share/tabset/stdcrt 644 0 0
+slink /lib/terminfo/r/rxvt-m /lib/terminfo/r/rxvt-basic 777 0 0
+slink /lib/terminfo/x/xterm-debian /lib/terminfo/x/xterm 777 0 0
+#slink /lib/terminfo/E/Eterm-color /lib/terminfo/E/Eterm 777 0 0
+# libreadline6 - 6.2+dfsg-0.1
+file /lib/i386-linux-gnu/libreadline.so.6.2 /lib/i386-linux-gnu/libreadline.so.6.2 644 0 0
+file /lib/i386-linux-gnu/libhistory.so.6.2 /lib/i386-linux-gnu/libhistory.so.6.2 644 0 0
+slink /lib/i386-linux-gnu/libreadline.so.6 /lib/i386-linux-gnu/libreadline.so.6.2 777 0 0
+slink /lib/i386-linux-gnu/libhistory.so.6 /lib/i386-linux-gnu/libhistory.so.6.2 777 0 0
+# libselinux1 - 2.1.9-5
+file /usr/share/lintian/overrides/libselinux1 /usr/share/lintian/overrides/libselinux1 644 0 0
+file /lib/i386-linux-gnu/libselinux.so.1 /lib/i386-linux-gnu/libselinux.so.1 644 0 0
+dir /selinux 755 0 0
+# libuuid1 - 2.20.1-5.3
+file /lib/i386-linux-gnu/libuuid.so.1.3.0 /lib/i386-linux-gnu/libuuid.so.1.3.0 644 0 0
+dir /var/lib/libuuid 2775 0 0
+slink /lib/i386-linux-gnu/libuuid.so.1 /lib/i386-linux-gnu/libuuid.so.1.3.0 777 0 0
+# libusb-1.0-0 - 2:1.0.11-1
+file /lib/i386-linux-gnu/libusb-1.0.so.0.1.0 /lib/i386-linux-gnu/libusb-1.0.so.0.1.0 644 0 0
+slink /lib/i386-linux-gnu/libusb-1.0.so.0 /lib/i386-linux-gnu/libusb-1.0.so.0.1.0 777 0 0
+# libwrap0 - 7.6.q-24
+file /lib/i386-linux-gnu/libwrap.so.0.7.6 /lib/i386-linux-gnu/libwrap.so.0.7.6 644 0 0
+slink /lib/i386-linux-gnu/libwrap.so.0 /lib/i386-linux-gnu/libwrap.so.0.7.6 777 0 0
+# vim: set filetype=config shiftwidth=2 tabstop=2 paste:
