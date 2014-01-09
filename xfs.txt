@@ -1,8 +1,47 @@
-# $Id: xfs.txt,v 1.1 2006-10-12 06:15:43 brian Exp $
+# package name/version: xfsprogs / 3.1.7+b1
+# description: example package with comments
+# depends: _base otherpackage1 otherpackage2
+# helpcommand: /usr/bin/somebin --help
+# versioncommand: /usr/bin/somebin --version
+# examplecommand: /usr/bin/somebin -x -y -z 10
+#
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
-# xfs /sbin
-dir /sbin 0755 0 0
-file /sbin/mkfs.xfs /sbin/mkfs.xfs 0755 0 0
-file /sbin/fsck.xfs /sbin/fsck.xfs 0755 0 0
+#
+# dir /usr 755 0 0
+# dir /usr/share 755 0 0
+# dir /usr/share/locale 755 0 0
+dir /usr/share/locale/de 755 0 0
+dir /usr/share/locale/de/LC_MESSAGES 755 0 0
+file /usr/share/locale/de/LC_MESSAGES/xfsprogs.mo /usr/share/locale/de/LC_MESSAGES/xfsprogs.mo 644 0 0
+dir /usr/share/locale/pl 755 0 0
+dir /usr/share/locale/pl/LC_MESSAGES 755 0 0
+file /usr/share/locale/pl/LC_MESSAGES/xfsprogs.mo /usr/share/locale/pl/LC_MESSAGES/xfsprogs.mo 644 0 0
+# dir /usr/sbin 755 0 0
+file /usr/sbin/xfs_io /usr/sbin/xfs_io 755 0 0
+file /usr/sbin/xfs_copy /usr/sbin/xfs_copy 755 0 0
+file /usr/sbin/xfs_mkfile /usr/sbin/xfs_mkfile 755 0 0
+file /usr/sbin/xfs_fsr /usr/sbin/xfs_fsr 755 0 0
+file /usr/sbin/xfs_quota /usr/sbin/xfs_quota 755 0 0
+file /usr/sbin/xfs_mdrestore /usr/sbin/xfs_mdrestore 755 0 0
+file /usr/sbin/xfs_info /usr/sbin/xfs_info 755 0 0
+file /usr/sbin/xfs_admin /usr/sbin/xfs_admin 755 0 0
+file /usr/sbin/xfs_bmap /usr/sbin/xfs_bmap 755 0 0
+file /usr/sbin/xfs_estimate /usr/sbin/xfs_estimate 755 0 0
+file /usr/sbin/xfs_growfs /usr/sbin/xfs_growfs 755 0 0
+file /usr/sbin/xfs_check /usr/sbin/xfs_check 755 0 0
+file /usr/sbin/xfs_freeze /usr/sbin/xfs_freeze 755 0 0
+file /usr/sbin/xfs_rtcp /usr/sbin/xfs_rtcp 755 0 0
+file /usr/sbin/xfs_db /usr/sbin/xfs_db 755 0 0
+file /usr/sbin/xfs_logprint /usr/sbin/xfs_logprint 755 0 0
+file /usr/sbin/xfs_metadump /usr/sbin/xfs_metadump 755 0 0
+file /usr/sbin/xfs_ncheck /usr/sbin/xfs_ncheck 755 0 0
+# dir /lib 755 0 0
+file /lib/libhandle.so.1.0.3 /lib/libhandle.so.1.0.3 644 0 0
+# dir /sbin 755 0 0
+file /sbin/fsck.xfs /sbin/fsck.xfs 755 0 0
+file /sbin/mkfs.xfs /sbin/mkfs.xfs 755 0 0
+file /sbin/xfs_repair /sbin/xfs_repair 755 0 0
+slink /lib/libhandle.so.1 /lib/libhandle.so.1.0.3 777 0 0
+# vim: set filetype=config shiftwidth=2 tabstop=2 paste:

@@ -1,5 +1,21 @@
-# $Id: reiserfs.txt,v 1.2 2006-10-24 16:38:10 brian Exp $
-# reiserfs /sbin
-file /sbin/mkfs.reiserfs /sbin/mkfs.reiserfs 0755 0 0
-file /sbin/fsck.reiserfs /sbin/fsck.reiserfs 0755 0 0
-file /sbin/resize_reiserfs /sbin/resize_reiserfs 0755 0 0
+# package name/version: reiserfsprogs / 1:3.6.21-1
+# description: example package with comments
+# depends: _base otherpackage1 otherpackage2
+# helpcommand: /usr/bin/somebin --help
+# versioncommand: /usr/bin/somebin --version
+# examplecommand: /usr/bin/somebin -x -y -z 10
+#
+# dir <name> <mode> <uid> <gid>
+# file <name> <source> <mode> <uid> <gid>
+# slink <new name> <original file> <mode> <uid> <gid>
+#
+# dir /sbin 755 0 0
+file /sbin/mkfs.reiserfs /sbin/mkfs.reiserfs 755 0 0
+file /sbin/fsck.reiserfs /sbin/fsck.reiserfs 755 0 0
+file /sbin/reiserfstune /sbin/reiserfstune 755 0 0
+file /sbin/reiserfsck /sbin/reiserfsck 755 0 0
+file /sbin/resize_reiserfs /sbin/resize_reiserfs 755 0 0
+file /sbin/mkreiserfs /sbin/mkreiserfs 755 0 0
+# dir /usr 755 0 0
+# dir /usr/share 755 0 0
+# vim: set filetype=config shiftwidth=2 tabstop=2 paste:

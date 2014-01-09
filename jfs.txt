@@ -1,4 +1,22 @@
-# $Id: jfs.txt,v 1.1 2006-10-12 06:15:43 brian Exp $
-# jfs /sbin
-file /sbin/mkfs.jfs /sbin/mkfs.jfs 0755 0 0
-file /sbin/fsck.jfs /sbin/fsck.jfs 0755 0 0
+# package name/version: jfsutils / 1.1.15-2
+# description: example package with comments
+# depends: _base otherpackage1 otherpackage2
+# helpcommand: /usr/bin/somebin --help
+# versioncommand: /usr/bin/somebin --version
+# examplecommand: /usr/bin/somebin -x -y -z 10
+#
+# dir <name> <mode> <uid> <gid>
+# file <name> <source> <mode> <uid> <gid>
+# slink <new name> <original file> <mode> <uid> <gid>
+#
+# dir /usr 755 0 0
+# dir /usr/share 755 0 0
+# dir /sbin 755 0 0
+file /sbin/jfs_logdump /sbin/jfs_logdump 755 0 0
+file /sbin/jfs_tune /sbin/jfs_tune 755 0 0
+file /sbin/jfs_fscklog /sbin/jfs_fscklog 755 0 0
+file /sbin/mkfs.jfs /sbin/mkfs.jfs 755 0 0
+file /sbin/jfs_mkfs /sbin/jfs_mkfs 755 0 0
+file /sbin/jfs_fsck /sbin/jfs_fsck 755 0 0
+file /sbin/fsck.jfs /sbin/fsck.jfs 755 0 0
+# vim: set filetype=config shiftwidth=2 tabstop=2 paste:
