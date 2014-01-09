@@ -311,17 +311,17 @@ slink /lib/i386-linux-gnu/ld-linux.so.2 /lib/i386-linux-gnu/ld-2.13.so 777 0 0
 slink /lib/i386-linux-gnu/libpthread.so.0 /lib/i386-linux-gnu/libpthread-2.13.so 777 0 0
 slink /lib/i386-linux-gnu/libBrokenLocale.so.1 /lib/i386-linux-gnu/libBrokenLocale-2.13.so 777 0 0
 slink /lib/ld-linux.so.2 /lib/i386-linux-gnu/ld-2.13.so 777 0 0
-# libgcc1 - 1:4.7.2-5
+# name: libgcc1 - 1:4.7.2-5
 file /lib/i386-linux-gnu/libgcc_s.so.1 /lib/i386-linux-gnu/libgcc_s.so.1 644 0 0
 file /usr/share/lintian/overrides/libgcc1 /usr/share/lintian/overrides/libgcc1 644 0 0
-# libbz2-1.0 - 1.0.6-4
+# name: libbz2-1.0 - 1.0.6-4
 file /lib/i386-linux-gnu/libbz2.so.1.0.4 /lib/i386-linux-gnu/libbz2.so.1.0.4 644 0 0
 slink /lib/i386-linux-gnu/libbz2.so.1.0 /lib/i386-linux-gnu/libbz2.so.1.0.4 777 0 0
 slink /lib/i386-linux-gnu/libbz2.so.1 /lib/i386-linux-gnu/libbz2.so.1.0.4 777 0 0
-# libblkid1 - 2.20.1-5.3
+# name: libblkid1 - 2.20.1-5.3
 file /lib/i386-linux-gnu/libblkid.so.1.1.0 /lib/i386-linux-gnu/libblkid.so.1.1.0 644 0 0
 slink /lib/i386-linux-gnu/libblkid.so.1 /lib/i386-linux-gnu/libblkid.so.1.1.0 777 0 0
-# libncursesw5 - 5.9-10
+# name: libncursesw5 - 5.9-10
 file /lib/i386-linux-gnu/libncursesw.so.5.9 /lib/i386-linux-gnu/libncursesw.so.5.9 644 0 0
 file /usr/lib/i386-linux-gnu/libmenuw.so.5.9 /usr/lib/i386-linux-gnu/libmenuw.so.5.9 644 0 0
 file /usr/lib/i386-linux-gnu/libformw.so.5.9 /usr/lib/i386-linux-gnu/libformw.so.5.9 644 0 0
@@ -330,7 +330,7 @@ slink /lib/i386-linux-gnu/libncursesw.so.5 /lib/i386-linux-gnu/libncursesw.so.5.
 slink /usr/lib/i386-linux-gnu/libmenuw.so.5 /usr/lib/i386-linux-gnu/libmenuw.so.5.9 777 0 0
 slink /usr/lib/i386-linux-gnu/libpanelw.so.5 /usr/lib/i386-linux-gnu/libpanelw.so.5.9 777 0 0
 slink /usr/lib/i386-linux-gnu/libformw.so.5 /usr/lib/i386-linux-gnu/libformw.so.5.9 777 0 0
-# ncurses-base - 5.9-10
+# name: ncurses-base - 5.9-10
 dir /lib/terminfo 755 0 0
 dir /lib/terminfo/r 755 0 0
 file /lib/terminfo/r/rxvt-unicode /lib/terminfo/r/rxvt-unicode 644 0 0
@@ -394,23 +394,23 @@ file /usr/share/tabset/stdcrt /usr/share/tabset/stdcrt 644 0 0
 slink /lib/terminfo/r/rxvt-m /lib/terminfo/r/rxvt-basic 777 0 0
 slink /lib/terminfo/x/xterm-debian /lib/terminfo/x/xterm 777 0 0
 #slink /lib/terminfo/E/Eterm-color /lib/terminfo/E/Eterm 777 0 0
-# libreadline6 - 6.2+dfsg-0.1
+# name: libreadline6 - 6.2+dfsg-0.1
 file /lib/i386-linux-gnu/libreadline.so.6.2 /lib/i386-linux-gnu/libreadline.so.6.2 644 0 0
 file /lib/i386-linux-gnu/libhistory.so.6.2 /lib/i386-linux-gnu/libhistory.so.6.2 644 0 0
 slink /lib/i386-linux-gnu/libreadline.so.6 /lib/i386-linux-gnu/libreadline.so.6.2 777 0 0
 slink /lib/i386-linux-gnu/libhistory.so.6 /lib/i386-linux-gnu/libhistory.so.6.2 777 0 0
-# libselinux1 - 2.1.9-5
+# name: libselinux1 - 2.1.9-5
 file /usr/share/lintian/overrides/libselinux1 /usr/share/lintian/overrides/libselinux1 644 0 0
 file /lib/i386-linux-gnu/libselinux.so.1 /lib/i386-linux-gnu/libselinux.so.1 644 0 0
 dir /selinux 755 0 0
-# libuuid1 - 2.20.1-5.3
+# name: libuuid1 - 2.20.1-5.3
 file /lib/i386-linux-gnu/libuuid.so.1.3.0 /lib/i386-linux-gnu/libuuid.so.1.3.0 644 0 0
 dir /var/lib/libuuid 2775 0 0
 slink /lib/i386-linux-gnu/libuuid.so.1 /lib/i386-linux-gnu/libuuid.so.1.3.0 777 0 0
-# libusb-1.0-0 - 2:1.0.11-1
+# name: libusb-1.0-0 - 2:1.0.11-1
 file /lib/i386-linux-gnu/libusb-1.0.so.0.1.0 /lib/i386-linux-gnu/libusb-1.0.so.0.1.0 644 0 0
 slink /lib/i386-linux-gnu/libusb-1.0.so.0 /lib/i386-linux-gnu/libusb-1.0.so.0.1.0 777 0 0
-# libwrap0 - 7.6.q-24
+# name: libwrap0 - 7.6.q-24
 file /lib/i386-linux-gnu/libwrap.so.0.7.6 /lib/i386-linux-gnu/libwrap.so.0.7.6 644 0 0
 slink /lib/i386-linux-gnu/libwrap.so.0 /lib/i386-linux-gnu/libwrap.so.0.7.6 777 0 0
 # vim: set filetype=config shiftwidth=2 tabstop=2 paste:
