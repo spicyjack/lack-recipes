@@ -1,10 +1,20 @@
-# $Id: extfs-common.txt,v 1.2 2006-12-21 17:21:20 brian Exp $
-# depends: _base
-# extfs-common /lib
-dir /lib 0755 0 0
-file /lib/libcom_err.so.2.1 /lib/libcom_err.so.2.1 0644 0 0
-slink /lib/libcom_err.so.2 /lib/libcom_err.so.2.1 0644 0 0
-file /lib/libe2p.so.2.3 /lib/libe2p.so.2.3 0644 0 0
-slink /lib/libe2p.so.2 /lib/libe2p.so.2.3 0644 0 0
-file /lib/libext2fs.so.2.4 /lib/libext2fs.so.2.4 0644 0 0
-slink /lib/libext2fs.so.2 /lib/libext2fs.so.2.4 0644 0 0
+# package name/version: e2fslibs / 1.42.5-1.1
+# description: example package with comments
+# depends: _base otherpackage1 otherpackage2
+# helpcommand: /usr/bin/somebin --help
+# versioncommand: /usr/bin/somebin --version
+# examplecommand: /usr/bin/somebin -x -y -z 10
+#
+# dir <name> <mode> <uid> <gid>
+# file <name> <source> <mode> <uid> <gid>
+# slink <new name> <original file> <mode> <uid> <gid>
+#
+# dir /lib 755 0 0
+dir /lib/i386-linux-gnu 755 0 0
+file /lib/i386-linux-gnu/libext2fs.so.2.4 /lib/i386-linux-gnu/libext2fs.so.2.4 644 0 0
+file /lib/i386-linux-gnu/libe2p.so.2.3 /lib/i386-linux-gnu/libe2p.so.2.3 644 0 0
+# dir /usr 755 0 0
+# dir /usr/share 755 0 0
+slink /lib/i386-linux-gnu/libext2fs.so.2 /lib/i386-linux-gnu/libext2fs.so.2.4 777 0 0
+slink /lib/i386-linux-gnu/libe2p.so.2 /lib/i386-linux-gnu/libe2p.so.2.3 777 0 0
+# vim: set filetype=config shiftwidth=2 tabstop=2 paste:
