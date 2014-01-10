@@ -1,24 +1,38 @@
-# package name/version: strace / 4.5.20-2.3
-# description: example package with comments
-# depends: _base otherpackage1 otherpackage2
-# helpcommand: /usr/bin/somebin --help
-# versioncommand: /usr/bin/somebin --version
-# examplecommand: /usr/bin/somebin -x -y -z 10
-#
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-dir /usr 755 0 0
-dir /usr/bin 755 0 0
+# package name/version: strace / 4.5.20-2.3
+#
+# /.
+# /usr
+# /usr/bin
 file /usr/bin/strace /usr/bin/strace 755 0 0
-dir /usr/share 755 0 0
+# /usr/share
+# /usr/share/man
+# /usr/share/man/man1
+# /usr/share/man/man1/strace.1.gz
+# /usr/share/doc
+# /usr/share/doc/strace
+# /usr/share/doc/strace/changelog.Debian.gz
+# /usr/share/doc/strace/copyright
+# /usr/share/doc/strace/examples
+# /usr/share/doc/strace/examples/strace-graph.gz
+# /usr/share/doc/strace/NEWS.gz
+# /usr/share/doc/strace/changelog.gz
+# /usr/share/doc/strace/TODO
+#
 # package name/version: pv / 1.2.0-1
-dir /usr 755 0 0
-dir /usr/bin 755 0 0
+#
+# /.
+# /usr
+# /usr/bin
 file /usr/bin/pv /usr/bin/pv 755 0 0
-dir /usr/share 755 0 0
-dir /usr/share/locale 755 0 0
+# /usr/share
+# /usr/share/man
+# /usr/share/man/man1
+# /usr/share/man/man1/pv.1.gz
+# /usr/share/locale
 dir /usr/share/locale/fr 755 0 0
 dir /usr/share/locale/fr/LC_MESSAGES 755 0 0
 file /usr/share/locale/fr/LC_MESSAGES/pv.mo /usr/share/locale/fr/LC_MESSAGES/pv.mo 644 0 0
@@ -31,15 +45,23 @@ file /usr/share/locale/pt/LC_MESSAGES/pv.mo /usr/share/locale/pt/LC_MESSAGES/pv.
 dir /usr/share/locale/pl 755 0 0
 dir /usr/share/locale/pl/LC_MESSAGES 755 0 0
 file /usr/share/locale/pl/LC_MESSAGES/pv.mo /usr/share/locale/pl/LC_MESSAGES/pv.mo 644 0 0
+# /usr/share/doc
+# /usr/share/doc/pv
+# /usr/share/doc/pv/changelog.Debian.gz
+# /usr/share/doc/pv/copyright
+# /usr/share/doc/pv/README.gz
+#
 # package name/version: screen / 4.1.0~20120320gitdb59704-7
-dir /etc 755 0 0
-dir /etc/init.d 755 0 0
+#
+# /.
+# /etc
+# /etc/init.d
 file /etc/init.d/screen-cleanup /etc/init.d/screen-cleanup 755 0 0
 file /etc/screenrc /etc/screenrc 644 0 0
-dir /usr 755 0 0
-dir /usr/bin 755 0 0
+# /usr
+# /usr/bin
 file /usr/bin/screen /usr/bin/screen 2755 0 0
-dir /usr/share 755 0 0
+# /usr/share
 dir /usr/share/screen 755 0 0
 dir /usr/share/screen/utf8encodings 755 0 0
 file /usr/share/screen/utf8encodings/d6 /usr/share/screen/utf8encodings/d6 644 0 0
@@ -59,7 +81,44 @@ file /usr/share/screen/utf8encodings/c6 /usr/share/screen/utf8encodings/c6 644 0
 file /usr/share/screen/utf8encodings/04 /usr/share/screen/utf8encodings/04 644 0 0
 file /usr/share/screen/utf8encodings/c2 /usr/share/screen/utf8encodings/c2 644 0 0
 file /usr/share/screen/utf8encodings/19 /usr/share/screen/utf8encodings/19 644 0 0
+# /usr/share/info
+# /usr/share/info/screen.info.gz
+# /usr/share/info/screen.info-3.gz
+# /usr/share/info/screen.info-4.gz
+# /usr/share/info/screen.info-1.gz
+# /usr/share/info/screen.info-2.gz
+# /usr/share/info/screen.info-5.gz
+# /usr/share/info/screen.info-6.gz
+# /usr/share/man
+# /usr/share/man/man1
+# /usr/share/man/man1/screen.1.gz
+# /usr/share/doc
+# /usr/share/doc/screen
+# /usr/share/doc/screen/terminfo
+# /usr/share/doc/screen/terminfo/checktc.c.gz
+# /usr/share/doc/screen/terminfo/tetris.c
+# /usr/share/doc/screen/terminfo/README
+# /usr/share/doc/screen/terminfo/README.terminfo
+# /usr/share/doc/screen/terminfo/test.txt.gz
+# /usr/share/doc/screen/terminfo/screeninfo.src
+# /usr/share/doc/screen/terminfo/8bits
+# /usr/share/doc/screen/terminfo/screencap
+# /usr/share/doc/screen/changelog.Debian.gz
+# /usr/share/doc/screen/copyright
+# /usr/share/doc/screen/examples
+# /usr/share/doc/screen/examples/etcscreenrc
+# /usr/share/doc/screen/examples/screenrc
+# /usr/share/doc/screen/README
+# /usr/share/doc/screen/NEWS.gz
+# /usr/share/doc/screen/FAQ.gz
+# /usr/share/doc/screen/NEWS.Debian.gz
+# /usr/share/doc/screen/README.Debian.gz
+# /usr/share/doc/screen/changelog.gz
+# /usr/share/doc/screen/window_to_display.ps.gz
+# /usr/share/doc/screen/TODO
+# /usr/share/doc/screen/fdpat.ps.gz
 dir /usr/share/lintian 755 0 0
 dir /usr/share/lintian/overrides 755 0 0
 file /usr/share/lintian/overrides/screen /usr/share/lintian/overrides/screen 644 0 0
+# /usr/share/doc/screen/patchlevel.h.gz
 # vim: set filetype=config shiftwidth=2 tabstop=2 paste:

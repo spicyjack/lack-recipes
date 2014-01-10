@@ -1,20 +1,23 @@
-# package name/version: lshw / 02.16-1
-# description: example package with comments
-# depends: _base otherpackage1 otherpackage2
-# helpcommand: /usr/bin/somebin --help
-# versioncommand: /usr/bin/somebin --version
-# examplecommand: /usr/bin/somebin -x -y -z 10
-#
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-dir /usr 755 0 0
-dir /usr/bin 755 0 0
+# package name/version: lshw / 02.16-1
+#
+# /.
+# /usr
+# /usr/bin
 file /usr/bin/lshw /usr/bin/lshw 755 0 0
-dir /usr/share 755 0 0
-dir /usr/share/locale 755 0 0
+# /usr/share
+# /usr/share/man
+# /usr/share/man/man1
+# /usr/share/man/man1/lshw.1.gz
+# /usr/share/locale
 dir /usr/share/locale/fr 755 0 0
 dir /usr/share/locale/fr/LC_MESSAGES 755 0 0
 file /usr/share/locale/fr/LC_MESSAGES/lshw.mo /usr/share/locale/fr/LC_MESSAGES/lshw.mo 644 0 0
+# /usr/share/doc
+# /usr/share/doc/lshw
+# /usr/share/doc/lshw/changelog.Debian.gz
+# /usr/share/doc/lshw/copyright
 # vim: set filetype=config shiftwidth=2 tabstop=2 paste:

@@ -1,18 +1,16 @@
-# package name/version: libstdc++6 / 4.7.2-4
-# description: example package with comments
-# depends: _base otherpackage1 otherpackage2
-# helpcommand: /usr/bin/somebin --help
-# versioncommand: /usr/bin/somebin --version
-# examplecommand: /usr/bin/somebin -x -y -z 10
-#
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-dir /usr 755 0 0
-dir /usr/lib 755 0 0
+# package name/version: libstdc++6 / 4.7.2-5
+#
+# /.
+# /usr
+# /usr/lib
 dir /usr/lib/i386-linux-gnu 755 0 0
 file /usr/lib/i386-linux-gnu/libstdc++.so.6.0.17 /usr/lib/i386-linux-gnu/libstdc++.so.6.0.17 644 0 0
-dir /usr/share 755 0 0
+# /usr/share
+# /usr/share/doc
 slink /usr/lib/i386-linux-gnu/libstdc++.so.6 /usr/lib/i386-linux-gnu/libstdc++.so.6.0.17 777 0 0
+# /usr/share/doc/libstdc++6
 # vim: set filetype=config shiftwidth=2 tabstop=2 paste:

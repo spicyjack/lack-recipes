@@ -1,27 +1,35 @@
-# package name/version: usbutils / 1:005-3
-# description: example package with comments
-# depends: _base otherpackage1 otherpackage2
-# helpcommand: /usr/bin/somebin --help
-# versioncommand: /usr/bin/somebin --version
-# examplecommand: /usr/bin/somebin -x -y -z 10
-#
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-dir /usr 755 0 0
-dir /usr/bin 755 0 0
+# package name/version: usbutils / 1:005-3
+#
+# /.
+# /usr
+# /usr/bin
 file /usr/bin/lsusb /usr/bin/lsusb 755 0 0
 file /usr/bin/usbhid-dump /usr/bin/usbhid-dump 755 0 0
 file /usr/bin/usb-devices /usr/bin/usb-devices 755 0 0
-dir /usr/share 755 0 0
+# /usr/share
 dir /usr/share/pkgconfig 755 0 0
 file /usr/share/pkgconfig/usbutils.pc /usr/share/pkgconfig/usbutils.pc 644 0 0
+# /usr/share/man
+# /usr/share/man/man8
+# /usr/share/man/man8/update-usbids.8.gz
+# /usr/share/man/man8/lsusb.8.gz
+# /usr/share/man/man1
+# /usr/share/man/man1/usb-devices.1.gz
+# /usr/share/doc
+# /usr/share/doc/usbutils
+# /usr/share/doc/usbutils/changelog.Debian.gz
+# /usr/share/doc/usbutils/copyright
+# /usr/share/doc/usbutils/README.Debian
+# /usr/share/doc/usbutils/changelog.gz
 dir /usr/share/misc 755 0 0
-dir /usr/sbin 755 0 0
+# /usr/sbin
 file /usr/sbin/update-usbids /usr/sbin/update-usbids 755 0 0
-dir /var 755 0 0
-dir /var/lib 755 0 0
+# /var
+# /var/lib
 dir /var/lib/usbutils 755 0 0
 file /var/lib/usbutils/usb.ids /var/lib/usbutils/usb.ids 644 0 0
 slink /usr/share/misc/usb.ids /var/lib/usbutils/usb.ids 777 0 0
