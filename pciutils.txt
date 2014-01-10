@@ -1,0 +1,34 @@
+# dir <name> <mode> <uid> <gid>
+# file <name> <source> <mode> <uid> <gid>
+# slink <new name> <original file> <mode> <uid> <gid>
+#
+# package name/version: pciutils / 1:3.1.9-6
+#
+# /.
+# /usr
+# /usr/bin
+file /usr/bin/lspci /usr/bin/lspci 755 0 0
+file /usr/bin/pcimodules /usr/bin/pcimodules 755 0 0
+file /usr/bin/update-pciids /usr/bin/update-pciids 755 0 0
+file /usr/bin/setpci /usr/bin/setpci 755 0 0
+# /usr/share
+# /usr/share/man
+# /usr/share/man/man8
+# /usr/share/man/man8/pcimodules.8.gz
+# /usr/share/man/man8/setpci.8.gz
+# /usr/share/man/man8/lspci.8.gz
+# /usr/share/man/man8/update-pciids.8.gz
+# /usr/share/man/man7
+# /usr/share/man/man7/pcilib.7.gz
+# /usr/share/doc
+# /usr/share/doc/pciutils
+# /usr/share/doc/pciutils/changelog.Debian.gz
+# /usr/share/doc/pciutils/copyright
+# /usr/share/doc/pciutils/examples
+# /usr/share/doc/pciutils/examples/example.c
+# /usr/share/doc/pciutils/changelog.gz
+# /usr/share/doc/pciutils/README.gz
+# /usr/share/doc/pciutils/TODO.Debian
+dir /usr/share/misc 755 0 0
+file /usr/share/misc/pci.ids /usr/share/misc/pci.ids 644 0 0
+# vim: set filetype=config shiftwidth=2 tabstop=2 paste:
