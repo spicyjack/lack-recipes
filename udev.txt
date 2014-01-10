@@ -1,16 +1,12 @@
-# package name/version: udev / 175-7.2
-# description: example package with comments
-# depends: _base otherpackage1 otherpackage2
-# helpcommand: /usr/bin/somebin --help
-# versioncommand: /usr/bin/somebin --version
-# examplecommand: /usr/bin/somebin -x -y -z 10
-#
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-dir /usr 755 0 0
-dir /usr/share 755 0 0
+# package name/version: udev / 175-7.2
+#
+# /.
+# /usr
+# /usr/share
 dir /usr/share/initramfs-tools 755 0 0
 dir /usr/share/initramfs-tools/hooks 755 0 0
 file /usr/share/initramfs-tools/hooks/udev /usr/share/initramfs-tools/hooks/udev 755 0 0
@@ -21,19 +17,34 @@ dir /usr/share/initramfs-tools/scripts/init-top 755 0 0
 file /usr/share/initramfs-tools/scripts/init-top/udev /usr/share/initramfs-tools/scripts/init-top/udev 755 0 0
 dir /usr/share/pkgconfig 755 0 0
 file /usr/share/pkgconfig/udev.pc /usr/share/pkgconfig/udev.pc 644 0 0
-dir /usr/lib 755 0 0
+# /usr/share/man
+# /usr/share/man/man7
+# /usr/share/man/man7/udev.7.gz
+# /usr/share/man/man8
+# /usr/share/man/man8/udevd.8.gz
+# /usr/share/man/man8/scsi_id.8.gz
+# /usr/share/man/man8/udevadm.8.gz
+# /usr/share/doc
+# /usr/share/doc/libudev0
+# /usr/share/doc/libudev0/README.keymap.txt.gz
+# /usr/share/doc/libudev0/README.gz
+# /usr/share/doc/libudev0/TODO
+# /usr/share/doc/libudev0/README.Debian.gz
+# /usr/share/doc/libudev0/udev.vim
+# /usr/share/doc/libudev0/NEWS.gz
+# /usr/lib
 dir /usr/lib/ConsoleKit 755 0 0
 dir /usr/lib/ConsoleKit/run-seat.d 755 0 0
-dir /sbin 755 0 0
+# /sbin
 file /sbin/udevadm /sbin/udevadm 755 0 0
 file /sbin/udevd /sbin/udevd 755 0 0
-dir /etc 755 0 0
-dir /etc/modprobe.d 755 0 0
+# /etc
+# /etc/modprobe.d
 file /etc/modprobe.d/fbdev-blacklist.conf /etc/modprobe.d/fbdev-blacklist.conf 644 0 0
-dir /etc/init.d 755 0 0
+# /etc/init.d
 file /etc/init.d/udev-mtab /etc/init.d/udev-mtab 755 0 0
 file /etc/init.d/udev /etc/init.d/udev 755 0 0
-dir /etc/init 755 0 0
+# /etc/init
 file /etc/init/udev-finish.conf /etc/init/udev-finish.conf 644 0 0
 file /etc/init/udevmonitor.conf /etc/init/udevmonitor.conf 644 0 0
 file /etc/init/udev-fallback-graphics.conf /etc/init/udev-fallback-graphics.conf 644 0 0
@@ -44,7 +55,7 @@ dir /etc/udev/rules.d 755 0 0
 dir /etc/udev/.dev 755 0 0
 file /etc/udev/udev.conf /etc/udev/udev.conf 644 0 0
 file /etc/udev/links.conf /etc/udev/links.conf 644 0 0
-dir /lib 755 0 0
+# /lib
 dir /lib/firmware 755 0 0
 dir /lib/systemd 755 0 0
 dir /lib/systemd/system 755 0 0
@@ -167,16 +178,10 @@ file /lib/udev/mtd_probe /lib/udev/mtd_probe 755 0 0
 file /lib/udev/keyboard-force-release.sh /lib/udev/keyboard-force-release.sh 755 0 0
 file /lib/udev/write_cd_rules /lib/udev/write_cd_rules 755 0 0
 file /lib/udev/findkeyboards /lib/udev/findkeyboards 755 0 0
+# /usr/share/doc/udev
 slink /usr/lib/ConsoleKit/run-seat.d/udev-acl.ck /lib/udev/udev-acl 777 0 0
 slink /lib/systemd/system/sockets.target.wants/udev-control.socket /lib/systemd/system/udev-control.socket 777 0 0
 slink /lib/systemd/system/sockets.target.wants/udev-kernel.socket /lib/systemd/system/udev-kernel.socket 777 0 0
 slink /lib/systemd/system/basic.target.wants/udev-trigger.service /lib/systemd/system/udev-trigger.service 777 0 0
 slink /lib/systemd/system/basic.target.wants/udev.service /lib/systemd/system/udev.service 777 0 0
-# package name/version: libudev0 / 175-7.2
-dir /usr 755 0 0
-dir /usr/share 755 0 0
-dir /lib 755 0 0
-dir /lib/i386-linux-gnu 755 0 0
-file /lib/i386-linux-gnu/libudev.so.0.13.0 /lib/i386-linux-gnu/libudev.so.0.13.0 644 0 0
-slink /lib/i386-linux-gnu/libudev.so.0 /lib/i386-linux-gnu/libudev.so.0.13.0 777 0 0
 # vim: set filetype=config shiftwidth=2 tabstop=2 paste:
