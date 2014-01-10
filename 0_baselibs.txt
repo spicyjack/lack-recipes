@@ -1,18 +1,28 @@
-# name: _baselibs.txt
-# description: example package with comments
-# depends: _base otherpackage1 otherpackage2
-# helpcommand: /usr/bin/somebin --help
-# versioncommand: /usr/bin/somebin --version
-# examplecommand: /usr/bin/somebin -x -y -z 10
-#
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-# name: libc6 - 2.13-38
+# package name/version: libc6 / 2.13-38
+#
+# /.
+# /usr
+# /usr/share
+# /usr/share/doc
+# /usr/share/doc/libc6
+# /usr/share/doc/libc6/NEWS.gz
+# /usr/share/doc/libc6/FAQ.gz
+# /usr/share/doc/libc6/copyright
+# /usr/share/doc/libc6/changelog.gz
+# /usr/share/doc/libc6/test-results-i486-linux-gnu-libc
+# /usr/share/doc/libc6/NEWS.Debian.gz
+# /usr/share/doc/libc6/README.Debian.gz
+# /usr/share/doc/libc6/BUGS
+# /usr/share/doc/libc6/changelog.Debian.gz
+# /usr/share/doc/libc6/README.hesiod.gz
 dir /usr/share/lintian 755 0 0
 dir /usr/share/lintian/overrides 755 0 0
 file /usr/share/lintian/overrides/libc6 /usr/share/lintian/overrides/libc6 644 0 0
+# /usr/lib
 dir /usr/lib/i386-linux-gnu 755 0 0
 dir /usr/lib/i386-linux-gnu/gconv 755 0 0
 file /usr/lib/i386-linux-gnu/gconv/HP-THAI8.so /usr/lib/i386-linux-gnu/gconv/HP-THAI8.so 644 0 0
@@ -264,6 +274,7 @@ file /usr/lib/i386-linux-gnu/gconv/IBM423.so /usr/lib/i386-linux-gnu/gconv/IBM42
 file /usr/lib/i386-linux-gnu/gconv/IBM850.so /usr/lib/i386-linux-gnu/gconv/IBM850.so 644 0 0
 file /usr/lib/i386-linux-gnu/gconv/SJIS.so /usr/lib/i386-linux-gnu/gconv/SJIS.so 644 0 0
 file /usr/lib/i386-linux-gnu/gconv/IBM4971.so /usr/lib/i386-linux-gnu/gconv/IBM4971.so 644 0 0
+# /lib
 dir /lib/i386-linux-gnu 755 0 0
 file /lib/i386-linux-gnu/libSegFault.so /lib/i386-linux-gnu/libSegFault.so 644 0 0
 file /lib/i386-linux-gnu/libmemusage.so /lib/i386-linux-gnu/libmemusage.so 644 0 0
@@ -288,6 +299,7 @@ file /lib/i386-linux-gnu/libnsl-2.13.so /lib/i386-linux-gnu/libnsl-2.13.so 644 0
 file /lib/i386-linux-gnu/libnss_dns-2.13.so /lib/i386-linux-gnu/libnss_dns-2.13.so 644 0 0
 file /lib/i386-linux-gnu/libnss_nis-2.13.so /lib/i386-linux-gnu/libnss_nis-2.13.so 644 0 0
 file /lib/i386-linux-gnu/libthread_db-1.0.so /lib/i386-linux-gnu/libthread_db-1.0.so 644 0 0
+# /etc
 dir /etc/ld.so.conf.d 755 0 0
 file /etc/ld.so.conf.d/i486-linux-gnu.conf /etc/ld.so.conf.d/i486-linux-gnu.conf 644 0 0
 slink /lib/i386-linux-gnu/libnss_hesiod.so.2 /lib/i386-linux-gnu/libnss_hesiod-2.13.so 777 0 0
@@ -311,59 +323,109 @@ slink /lib/i386-linux-gnu/ld-linux.so.2 /lib/i386-linux-gnu/ld-2.13.so 777 0 0
 slink /lib/i386-linux-gnu/libpthread.so.0 /lib/i386-linux-gnu/libpthread-2.13.so 777 0 0
 slink /lib/i386-linux-gnu/libBrokenLocale.so.1 /lib/i386-linux-gnu/libBrokenLocale-2.13.so 777 0 0
 slink /lib/ld-linux.so.2 /lib/i386-linux-gnu/ld-2.13.so 777 0 0
-# name: libgcc1 - 1:4.7.2-5
+#
+# package name/version: libgcc1 / 1:4.7.2-5
+#
+# /.
+# /lib
+dir /lib/i386-linux-gnu 755 0 0
 file /lib/i386-linux-gnu/libgcc_s.so.1 /lib/i386-linux-gnu/libgcc_s.so.1 644 0 0
+# /usr
+# /usr/share
+# /usr/share/doc
+dir /usr/share/lintian 755 0 0
+dir /usr/share/lintian/overrides 755 0 0
 file /usr/share/lintian/overrides/libgcc1 /usr/share/lintian/overrides/libgcc1 644 0 0
-# name: libbz2-1.0 - 1.0.6-4
+# /usr/share/doc/libgcc1
+#
+# package name/version: libbz2-1.0 / 1.0.6-4
+#
+# /.
+# /lib
+dir /lib/i386-linux-gnu 755 0 0
 file /lib/i386-linux-gnu/libbz2.so.1.0.4 /lib/i386-linux-gnu/libbz2.so.1.0.4 644 0 0
+# /usr
+# /usr/share
+# /usr/share/doc
+# /usr/share/doc/libbz2-1.0
+# /usr/share/doc/libbz2-1.0/changelog.Debian.gz
+# /usr/share/doc/libbz2-1.0/copyright
+# /usr/share/doc/libbz2-1.0/changelog.gz
 slink /lib/i386-linux-gnu/libbz2.so.1.0 /lib/i386-linux-gnu/libbz2.so.1.0.4 777 0 0
 slink /lib/i386-linux-gnu/libbz2.so.1 /lib/i386-linux-gnu/libbz2.so.1.0.4 777 0 0
-# name: libblkid1 - 2.20.1-5.3
+#
+# package name/version: libblkid1 / 2.20.1-5.3
+#
+# /.
+# /lib
+dir /lib/i386-linux-gnu 755 0 0
 file /lib/i386-linux-gnu/libblkid.so.1.1.0 /lib/i386-linux-gnu/libblkid.so.1.1.0 644 0 0
+# /usr
+# /usr/share
+# /usr/share/doc
+# /usr/share/doc/libblkid1
+# /usr/share/doc/libblkid1/changelog.gz
+# /usr/share/doc/libblkid1/changelog.Debian.gz
+# /usr/share/doc/libblkid1/copyright
 slink /lib/i386-linux-gnu/libblkid.so.1 /lib/i386-linux-gnu/libblkid.so.1.1.0 777 0 0
-# name: libncursesw5 - 5.9-10
+#
+# package name/version: libncursesw5 / 5.9-10
+#
+# /.
+# /lib
+dir /lib/i386-linux-gnu 755 0 0
 file /lib/i386-linux-gnu/libncursesw.so.5.9 /lib/i386-linux-gnu/libncursesw.so.5.9 644 0 0
+# /usr
+# /usr/lib
+dir /usr/lib/i386-linux-gnu 755 0 0
 file /usr/lib/i386-linux-gnu/libmenuw.so.5.9 /usr/lib/i386-linux-gnu/libmenuw.so.5.9 644 0 0
 file /usr/lib/i386-linux-gnu/libformw.so.5.9 /usr/lib/i386-linux-gnu/libformw.so.5.9 644 0 0
 file /usr/lib/i386-linux-gnu/libpanelw.so.5.9 /usr/lib/i386-linux-gnu/libpanelw.so.5.9 644 0 0
+# /usr/share
+# /usr/share/doc
 slink /lib/i386-linux-gnu/libncursesw.so.5 /lib/i386-linux-gnu/libncursesw.so.5.9 777 0 0
 slink /usr/lib/i386-linux-gnu/libmenuw.so.5 /usr/lib/i386-linux-gnu/libmenuw.so.5.9 777 0 0
 slink /usr/lib/i386-linux-gnu/libpanelw.so.5 /usr/lib/i386-linux-gnu/libpanelw.so.5.9 777 0 0
 slink /usr/lib/i386-linux-gnu/libformw.so.5 /usr/lib/i386-linux-gnu/libformw.so.5.9 777 0 0
-# name: ncurses-base - 5.9-10
+# /usr/share/doc/libncursesw5
+#
+# package name/version: ncurses-base / 5.9-10
+#
+# /.
+# /lib
 dir /lib/terminfo 755 0 0
 dir /lib/terminfo/r 755 0 0
 file /lib/terminfo/r/rxvt-unicode /lib/terminfo/r/rxvt-unicode 644 0 0
 file /lib/terminfo/r/rxvt /lib/terminfo/r/rxvt 644 0 0
 file /lib/terminfo/r/rxvt-basic /lib/terminfo/r/rxvt-basic 644 0 0
-#dir /lib/terminfo/x 755 0 0
+dir /lib/terminfo/x 755 0 0
 file /lib/terminfo/x/xterm-color /lib/terminfo/x/xterm-color 644 0 0
-#file /lib/terminfo/x/xterm-r6 /lib/terminfo/x/xterm-r6 644 0 0
-#file /lib/terminfo/x/xterm-mono /lib/terminfo/x/xterm-mono 644 0 0
-#file /lib/terminfo/x/xterm-r5 /lib/terminfo/x/xterm-r5 644 0 0
-#file /lib/terminfo/x/xterm-vt220 /lib/terminfo/x/xterm-vt220 644 0 0
+file /lib/terminfo/x/xterm-r6 /lib/terminfo/x/xterm-r6 644 0 0
+file /lib/terminfo/x/xterm-mono /lib/terminfo/x/xterm-mono 644 0 0
+file /lib/terminfo/x/xterm-r5 /lib/terminfo/x/xterm-r5 644 0 0
+file /lib/terminfo/x/xterm-vt220 /lib/terminfo/x/xterm-vt220 644 0 0
 file /lib/terminfo/x/xterm /lib/terminfo/x/xterm 644 0 0
 file /lib/terminfo/x/xterm-256color /lib/terminfo/x/xterm-256color 644 0 0
-#file /lib/terminfo/x/xterm-xfree86 /lib/terminfo/x/xterm-xfree86 644 0 0
+file /lib/terminfo/x/xterm-xfree86 /lib/terminfo/x/xterm-xfree86 644 0 0
 dir /lib/terminfo/s 755 0 0
 file /lib/terminfo/s/screen /lib/terminfo/s/screen 644 0 0
-#file /lib/terminfo/s/screen-bce /lib/terminfo/s/screen-bce 644 0 0
-#file /lib/terminfo/s/screen-256color-bce /lib/terminfo/s/screen-256color-bce 644 0 0
+file /lib/terminfo/s/screen-bce /lib/terminfo/s/screen-bce 644 0 0
+file /lib/terminfo/s/screen-256color-bce /lib/terminfo/s/screen-256color-bce 644 0 0
 file /lib/terminfo/s/screen-w /lib/terminfo/s/screen-w 644 0 0
-#file /lib/terminfo/s/sun /lib/terminfo/s/sun 644 0 0
-#file /lib/terminfo/s/screen-s /lib/terminfo/s/screen-s 644 0 0
-#file /lib/terminfo/s/screen-256color /lib/terminfo/s/screen-256color 644 0 0
+file /lib/terminfo/s/sun /lib/terminfo/s/sun 644 0 0
+file /lib/terminfo/s/screen-s /lib/terminfo/s/screen-s 644 0 0
+file /lib/terminfo/s/screen-256color /lib/terminfo/s/screen-256color 644 0 0
 dir /lib/terminfo/a 755 0 0
 file /lib/terminfo/a/ansi /lib/terminfo/a/ansi 644 0 0
-#dir /lib/terminfo/w 755 0 0
-#file /lib/terminfo/w/wsvt25m /lib/terminfo/w/wsvt25m 644 0 0
-#file /lib/terminfo/w/wsvt25 /lib/terminfo/w/wsvt25 644 0 0
-#dir /lib/terminfo/p 755 0 0
-#file /lib/terminfo/p/pcansi /lib/terminfo/p/pcansi 644 0 0
+dir /lib/terminfo/w 755 0 0
+file /lib/terminfo/w/wsvt25m /lib/terminfo/w/wsvt25m 644 0 0
+file /lib/terminfo/w/wsvt25 /lib/terminfo/w/wsvt25 644 0 0
+dir /lib/terminfo/p 755 0 0
+file /lib/terminfo/p/pcansi /lib/terminfo/p/pcansi 644 0 0
 dir /lib/terminfo/l 755 0 0
 file /lib/terminfo/l/linux /lib/terminfo/l/linux 644 0 0
-#dir /lib/terminfo/E 755 0 0
-#file /lib/terminfo/E/Eterm /lib/terminfo/E/Eterm 644 0 0
+dir /lib/terminfo/E 755 0 0
+file /lib/terminfo/E/Eterm /lib/terminfo/E/Eterm 644 0 0
 dir /lib/terminfo/v 755 0 0
 file /lib/terminfo/v/vt102 /lib/terminfo/v/vt102 644 0 0
 file /lib/terminfo/v/vt52 /lib/terminfo/v/vt52 644 0 0
@@ -371,21 +433,31 @@ file /lib/terminfo/v/vt100 /lib/terminfo/v/vt100 644 0 0
 file /lib/terminfo/v/vt220 /lib/terminfo/v/vt220 644 0 0
 dir /lib/terminfo/d 755 0 0
 file /lib/terminfo/d/dumb /lib/terminfo/d/dumb 644 0 0
-#dir /lib/terminfo/m 755 0 0
-#file /lib/terminfo/m/mach-bold /lib/terminfo/m/mach-bold 644 0 0
-#file /lib/terminfo/m/mach-gnu-color /lib/terminfo/m/mach-gnu-color 644 0 0
-#file /lib/terminfo/m/mach /lib/terminfo/m/mach 644 0 0
-#file /lib/terminfo/m/mach-color /lib/terminfo/m/mach-color 644 0 0
-#file /lib/terminfo/m/mach-gnu /lib/terminfo/m/mach-gnu 644 0 0
-#dir /lib/terminfo/c 755 0 0
-#file /lib/terminfo/c/cons25 /lib/terminfo/c/cons25 644 0 0
-#file /lib/terminfo/c/cons25-debian /lib/terminfo/c/cons25-debian 644 0 0
-#file /lib/terminfo/c/cygwin /lib/terminfo/c/cygwin 644 0 0
-#dir /lib/terminfo/h 755 0 0
-#file /lib/terminfo/h/hurd /lib/terminfo/h/hurd 644 0 0
+dir /lib/terminfo/m 755 0 0
+file /lib/terminfo/m/mach-bold /lib/terminfo/m/mach-bold 644 0 0
+file /lib/terminfo/m/mach-gnu-color /lib/terminfo/m/mach-gnu-color 644 0 0
+file /lib/terminfo/m/mach /lib/terminfo/m/mach 644 0 0
+file /lib/terminfo/m/mach-color /lib/terminfo/m/mach-color 644 0 0
+file /lib/terminfo/m/mach-gnu /lib/terminfo/m/mach-gnu 644 0 0
+dir /lib/terminfo/c 755 0 0
+file /lib/terminfo/c/cons25 /lib/terminfo/c/cons25 644 0 0
+file /lib/terminfo/c/cons25-debian /lib/terminfo/c/cons25-debian 644 0 0
+file /lib/terminfo/c/cygwin /lib/terminfo/c/cygwin 644 0 0
+dir /lib/terminfo/h 755 0 0
+file /lib/terminfo/h/hurd /lib/terminfo/h/hurd 644 0 0
+# /etc
 dir /etc/terminfo 755 0 0
 file /etc/terminfo/README /etc/terminfo/README 644 0 0
+# /usr
+# /usr/share
+dir /usr/share/lintian 755 0 0
+dir /usr/share/lintian/overrides 755 0 0
 file /usr/share/lintian/overrides/ncurses-base /usr/share/lintian/overrides/ncurses-base 644 0 0
+# /usr/share/doc
+# /usr/share/doc/ncurses-base
+# /usr/share/doc/ncurses-base/copyright
+# /usr/share/doc/ncurses-base/changelog.Debian.gz
+# /usr/share/doc/ncurses-base/changelog.gz
 dir /usr/share/tabset 755 0 0
 file /usr/share/tabset/std /usr/share/tabset/std 644 0 0
 file /usr/share/tabset/vt300 /usr/share/tabset/vt300 644 0 0
@@ -393,24 +465,103 @@ file /usr/share/tabset/vt100 /usr/share/tabset/vt100 644 0 0
 file /usr/share/tabset/stdcrt /usr/share/tabset/stdcrt 644 0 0
 slink /lib/terminfo/r/rxvt-m /lib/terminfo/r/rxvt-basic 777 0 0
 slink /lib/terminfo/x/xterm-debian /lib/terminfo/x/xterm 777 0 0
-#slink /lib/terminfo/E/Eterm-color /lib/terminfo/E/Eterm 777 0 0
-# name: libreadline6 - 6.2+dfsg-0.1
+slink /lib/terminfo/E/Eterm-color /lib/terminfo/E/Eterm 777 0 0
+#
+# package name/version: libreadline6 / 6.2+dfsg-0.1
+#
+# /.
+# /lib
+dir /lib/i386-linux-gnu 755 0 0
 file /lib/i386-linux-gnu/libreadline.so.6.2 /lib/i386-linux-gnu/libreadline.so.6.2 644 0 0
 file /lib/i386-linux-gnu/libhistory.so.6.2 /lib/i386-linux-gnu/libhistory.so.6.2 644 0 0
+# /etc
+# /usr
+# /usr/share
+# /usr/share/doc
+# /usr/share/doc/libreadline6
+# /usr/share/doc/libreadline6/inputrc.arrows
+# /usr/share/doc/libreadline6/changelog.gz
+# /usr/share/doc/libreadline6/examples
+# /usr/share/doc/libreadline6/examples/Inputrc
+# /usr/share/doc/libreadline6/USAGE
+# /usr/share/doc/libreadline6/changelog.Debian.gz
+# /usr/share/doc/libreadline6/copyright
+# /usr/share/doc/libreadline6/README.Debian
 slink /lib/i386-linux-gnu/libreadline.so.6 /lib/i386-linux-gnu/libreadline.so.6.2 777 0 0
 slink /lib/i386-linux-gnu/libhistory.so.6 /lib/i386-linux-gnu/libhistory.so.6.2 777 0 0
-# name: libselinux1 - 2.1.9-5
+#
+# package name/version: libselinux1 / 2.1.9-5
+#
+# /.
+# /usr
+# /usr/share
+# /usr/share/doc
+# /usr/share/doc/libselinux1
+# /usr/share/doc/libselinux1/changelog.Debian.gz
+# /usr/share/doc/libselinux1/copyright
+# /usr/share/doc/libselinux1/changelog.gz
+dir /usr/share/lintian 755 0 0
+dir /usr/share/lintian/overrides 755 0 0
 file /usr/share/lintian/overrides/libselinux1 /usr/share/lintian/overrides/libselinux1 644 0 0
+# /lib
+dir /lib/i386-linux-gnu 755 0 0
 file /lib/i386-linux-gnu/libselinux.so.1 /lib/i386-linux-gnu/libselinux.so.1 644 0 0
 dir /selinux 755 0 0
-# name: libuuid1 - 2.20.1-5.3
+#
+# package name/version: libuuid1 / 2.20.1-5.3
+#
+# /.
+# /lib
+dir /lib/i386-linux-gnu 755 0 0
 file /lib/i386-linux-gnu/libuuid.so.1.3.0 /lib/i386-linux-gnu/libuuid.so.1.3.0 644 0 0
+# /var
+# /var/lib
 dir /var/lib/libuuid 2775 0 0
+# /usr
+# /usr/share
+# /usr/share/doc
+# /usr/share/doc/libuuid1
+# /usr/share/doc/libuuid1/changelog.gz
+# /usr/share/doc/libuuid1/changelog.Debian.gz
+# /usr/share/doc/libuuid1/copyright
 slink /lib/i386-linux-gnu/libuuid.so.1 /lib/i386-linux-gnu/libuuid.so.1.3.0 777 0 0
-# name: libusb-1.0-0 - 2:1.0.11-1
+#
+# package name/version: libusb-1.0-0 / 2:1.0.11-1
+#
+# /.
+# /lib
+dir /lib/i386-linux-gnu 755 0 0
 file /lib/i386-linux-gnu/libusb-1.0.so.0.1.0 /lib/i386-linux-gnu/libusb-1.0.so.0.1.0 644 0 0
+# /usr
+# /usr/share
+# /usr/share/doc
+# /usr/share/doc/libusb-1.0-0
+# /usr/share/doc/libusb-1.0-0/changelog.gz
+# /usr/share/doc/libusb-1.0-0/changelog.Debian.gz
+# /usr/share/doc/libusb-1.0-0/README
+# /usr/share/doc/libusb-1.0-0/copyright
 slink /lib/i386-linux-gnu/libusb-1.0.so.0 /lib/i386-linux-gnu/libusb-1.0.so.0.1.0 777 0 0
-# name: libwrap0 - 7.6.q-24
+#
+# package name/version: libwrap0 / 7.6.q-24
+#
+# /.
+# /usr
+# /usr/share
+# /usr/share/man
+# /usr/share/man/man5
+# /usr/share/man/man5/hosts_options.5.gz
+# /usr/share/man/man5/hosts_access.5.gz
+# /usr/share/doc
+# /usr/share/doc/libwrap0
+# /usr/share/doc/libwrap0/README.gz
+# /usr/share/doc/libwrap0/README.Debian
+# /usr/share/doc/libwrap0/changelog.gz
+# /usr/share/doc/libwrap0/copyright
+# /usr/share/doc/libwrap0/changelog.Debian.gz
+# /lib
+dir /lib/i386-linux-gnu 755 0 0
 file /lib/i386-linux-gnu/libwrap.so.0.7.6 /lib/i386-linux-gnu/libwrap.so.0.7.6 644 0 0
+# /usr/share/man/man5/hosts.deny.5.gz
+# /usr/share/man/man5/hosts.allow.5.gz
 slink /lib/i386-linux-gnu/libwrap.so.0 /lib/i386-linux-gnu/libwrap.so.0.7.6 777 0 0
 # vim: set filetype=config shiftwidth=2 tabstop=2 paste:
