@@ -1,21 +1,27 @@
-# package name/version: wget / 1.13.4-3
-# description: example package with comments
-# depends: _base otherpackage1 otherpackage2
-# helpcommand: /usr/bin/somebin --help
-# versioncommand: /usr/bin/somebin --version
-# examplecommand: /usr/bin/somebin -x -y -z 10
-#
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-dir /etc 755 0 0
+# package name/version: wget / 1.13.4-3
+#
+# /.
+# /etc
 file /etc/wgetrc /etc/wgetrc 644 0 0
-dir /usr 755 0 0
-dir /usr/bin 755 0 0
+# /usr
+# /usr/bin
 file /usr/bin/wget /usr/bin/wget 755 0 0
-dir /usr/share 755 0 0
-dir /usr/share/locale 755 0 0
+# /usr/share
+# /usr/share/doc
+# /usr/share/doc/wget
+# /usr/share/doc/wget/AUTHORS
+# /usr/share/doc/wget/changelog.gz
+# /usr/share/doc/wget/MAILING-LIST
+# /usr/share/doc/wget/ChangeLog.README
+# /usr/share/doc/wget/NEWS.gz
+# /usr/share/doc/wget/changelog.Debian.gz
+# /usr/share/doc/wget/README
+# /usr/share/doc/wget/copyright
+# /usr/share/locale
 dir /usr/share/locale/sr 755 0 0
 dir /usr/share/locale/sr/LC_MESSAGES 755 0 0
 file /usr/share/locale/sr/LC_MESSAGES/wget.mo /usr/share/locale/sr/LC_MESSAGES/wget.mo 644 0 0
@@ -133,11 +139,9 @@ file /usr/share/locale/be/LC_MESSAGES/wget.mo /usr/share/locale/be/LC_MESSAGES/w
 dir /usr/share/locale/cs 755 0 0
 dir /usr/share/locale/cs/LC_MESSAGES 755 0 0
 file /usr/share/locale/cs/LC_MESSAGES/wget.mo /usr/share/locale/cs/LC_MESSAGES/wget.mo 644 0 0
-# package name/version: libp11-kit0 / 0.12-3
-dir /usr 755 0 0
-dir /usr/share 755 0 0
-dir /usr/lib 755 0 0
-dir /usr/lib/i386-linux-gnu 755 0 0
-file /usr/lib/i386-linux-gnu/libp11-kit.so.0.0.0 /usr/lib/i386-linux-gnu/libp11-kit.so.0.0.0 644 0 0
-slink /usr/lib/i386-linux-gnu/libp11-kit.so.0 /usr/lib/i386-linux-gnu/libp11-kit.so.0.0.0 777 0 0
+# /usr/share/man
+# /usr/share/man/man1
+# /usr/share/man/man1/wget.1.gz
+# /usr/share/info
+# /usr/share/info/wget.info.gz
 # vim: set filetype=config shiftwidth=2 tabstop=2 paste:

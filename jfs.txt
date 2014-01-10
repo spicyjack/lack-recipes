@@ -1,22 +1,38 @@
-# package name/version: jfsutils / 1.1.15-2
-# description: example package with comments
-# depends: _base otherpackage1 otherpackage2
-# helpcommand: /usr/bin/somebin --help
-# versioncommand: /usr/bin/somebin --version
-# examplecommand: /usr/bin/somebin -x -y -z 10
-#
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-# dir /usr 755 0 0
-# dir /usr/share 755 0 0
-# dir /sbin 755 0 0
+# package name/version: jfsutils / 1.1.15-2
+#
+# /.
+# /usr
+# /usr/share
+# /usr/share/man
+# /usr/share/man/man8
+# /usr/share/man/man8/jfs_logdump.8.gz
+# /usr/share/man/man8/jfs_fsck.8.gz
+# /usr/share/man/man8/jfs_mkfs.8.gz
+# /usr/share/man/man8/jfs_fscklog.8.gz
+# /usr/share/man/man8/mkfs.jfs.8.gz
+# /usr/share/man/man8/fsck.jfs.8.gz
+# /usr/share/man/man8/jfs_tune.8.gz
+# /usr/share/man/man8/jfs_debugfs.8.gz
+# /usr/share/doc
+# /usr/share/doc/jfsutils
+# /usr/share/doc/jfsutils/AUTHORS
+# /usr/share/doc/jfsutils/changelog.Debian.gz
+# /usr/share/doc/jfsutils/copyright
+# /usr/share/doc/jfsutils/README
+# /usr/share/doc/jfsutils/README.Debian
+# /usr/share/doc/jfsutils/NEWS.gz
+# /usr/share/doc/jfsutils/changelog.gz
+# /sbin
 file /sbin/jfs_logdump /sbin/jfs_logdump 755 0 0
 file /sbin/jfs_tune /sbin/jfs_tune 755 0 0
 file /sbin/jfs_fscklog /sbin/jfs_fscklog 755 0 0
 file /sbin/mkfs.jfs /sbin/mkfs.jfs 755 0 0
 file /sbin/jfs_mkfs /sbin/jfs_mkfs 755 0 0
 file /sbin/jfs_fsck /sbin/jfs_fsck 755 0 0
+# /sbin/jfs_debugfs
 file /sbin/fsck.jfs /sbin/fsck.jfs 755 0 0
 # vim: set filetype=config shiftwidth=2 tabstop=2 paste:

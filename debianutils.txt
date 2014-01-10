@@ -1,14 +1,81 @@
-# name: debianutils - 3.4
-# description: example package with comments
-# depends: _base otherpackage1 otherpackage2
-# helpcommand: /usr/bin/somebin --help
-# versioncommand: /usr/bin/somebin --version
-# examplecommand: /usr/bin/somebin -x -y -z 10
-#
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-dir /bin 755 0 0
+# package name/version: debianutils / 4.3.2
+#
+# /.
+# /usr
+# /usr/bin
+file /usr/bin/savelog /usr/bin/savelog 755 0 0
+file /usr/bin/ischroot /usr/bin/ischroot 755 0 0
+# /usr/share
+# /usr/share/man
+# /usr/share/man/man8
+# /usr/share/man/man8/add-shell.8.gz
+# /usr/share/man/man8/savelog.8.gz
+# /usr/share/man/man8/run-parts.8.gz
+# /usr/share/man/man8/remove-shell.8.gz
+# /usr/share/man/man8/installkernel.8.gz
+# /usr/share/man/man1
+# /usr/share/man/man1/ischroot.1.gz
+# /usr/share/man/man1/which.1.gz
+# /usr/share/man/man1/tempfile.1.gz
+# /usr/share/man/sl
+# /usr/share/man/sl/man8
+# /usr/share/man/sl/man8/add-shell.8.gz
+# /usr/share/man/sl/man8/savelog.8.gz
+# /usr/share/man/sl/man8/run-parts.8.gz
+# /usr/share/man/sl/man8/remove-shell.8.gz
+# /usr/share/man/sl/man8/installkernel.8.gz
+# /usr/share/man/sl/man1
+# /usr/share/man/sl/man1/which.1.gz
+# /usr/share/man/sl/man1/tempfile.1.gz
+# /usr/share/man/es
+# /usr/share/man/es/man8
+# /usr/share/man/es/man8/add-shell.8.gz
+# /usr/share/man/es/man8/savelog.8.gz
+# /usr/share/man/es/man8/run-parts.8.gz
+# /usr/share/man/es/man8/remove-shell.8.gz
+# /usr/share/man/es/man8/installkernel.8.gz
+# /usr/share/man/es/man1
+# /usr/share/man/es/man1/which.1.gz
+# /usr/share/man/es/man1/tempfile.1.gz
+# /usr/share/man/fr
+# /usr/share/man/fr/man8
+# /usr/share/man/fr/man8/add-shell.8.gz
+# /usr/share/man/fr/man8/savelog.8.gz
+# /usr/share/man/fr/man8/run-parts.8.gz
+# /usr/share/man/fr/man8/remove-shell.8.gz
+# /usr/share/man/fr/man8/installkernel.8.gz
+# /usr/share/man/fr/man1
+# /usr/share/man/fr/man1/which.1.gz
+# /usr/share/man/fr/man1/tempfile.1.gz
+# /usr/share/man/de
+# /usr/share/man/de/man8
+# /usr/share/man/de/man8/add-shell.8.gz
+# /usr/share/man/de/man8/savelog.8.gz
+# /usr/share/man/de/man8/run-parts.8.gz
+# /usr/share/man/de/man8/remove-shell.8.gz
+# /usr/share/man/de/man8/installkernel.8.gz
+# /usr/share/man/de/man1
+# /usr/share/man/de/man1/which.1.gz
+# /usr/share/man/de/man1/tempfile.1.gz
+# /usr/share/doc
+# /usr/share/doc/debianutils
+# /usr/share/doc/debianutils/copyright
+# /usr/share/doc/debianutils/changelog.gz
+# /usr/share/doc/debianutils/README.shells.gz
+dir /usr/share/debianutils 755 0 0
+file /usr/share/debianutils/shells /usr/share/debianutils/shells 644 0 0
+# /usr/sbin
+file /usr/sbin/add-shell /usr/sbin/add-shell 755 0 0
+file /usr/sbin/remove-shell /usr/sbin/remove-shell 755 0 0
+# /bin
+file /bin/which /bin/which 755 0 0
+file /bin/tempfile /bin/tempfile 755 0 0
 file /bin/run-parts /bin/run-parts 755 0 0
-# vi: set shiftwidth=4 tabstop=4 paste:
+# /sbin
+file /sbin/installkernel /sbin/installkernel 755 0 0
+slink /usr/bin/which /bin/which 777 0 0
+# vim: set filetype=config shiftwidth=2 tabstop=2 paste:

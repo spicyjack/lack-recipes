@@ -1,24 +1,54 @@
-# package name/version: xfsprogs / 3.1.7+b1
-# description: example package with comments
-# depends: _base otherpackage1 otherpackage2
-# helpcommand: /usr/bin/somebin --help
-# versioncommand: /usr/bin/somebin --version
-# examplecommand: /usr/bin/somebin -x -y -z 10
-#
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-# dir /usr 755 0 0
-# dir /usr/share 755 0 0
-# dir /usr/share/locale 755 0 0
+# package name/version: xfsprogs / 3.1.7+b1
+#
+# /.
+# /usr
+# /usr/share
+# /usr/share/man
+# /usr/share/man/man8
+# /usr/share/man/man8/xfs_metadump.8.gz
+# /usr/share/man/man8/xfs_growfs.8.gz
+# /usr/share/man/man8/xfs_freeze.8.gz
+# /usr/share/man/man8/xfs_repair.8.gz
+# /usr/share/man/man8/xfs_quota.8.gz
+# /usr/share/man/man8/xfs_estimate.8.gz
+# /usr/share/man/man8/xfs_db.8.gz
+# /usr/share/man/man8/mkfs.xfs.8.gz
+# /usr/share/man/man8/xfs_copy.8.gz
+# /usr/share/man/man8/xfs_check.8.gz
+# /usr/share/man/man8/xfs_io.8.gz
+# /usr/share/man/man8/xfs_rtcp.8.gz
+# /usr/share/man/man8/xfs_mdrestore.8.gz
+# /usr/share/man/man8/xfs_bmap.8.gz
+# /usr/share/man/man8/xfs_ncheck.8.gz
+# /usr/share/man/man8/xfs_fsr.8.gz
+# /usr/share/man/man8/xfs_mkfile.8.gz
+# /usr/share/man/man8/fsck.xfs.8.gz
+# /usr/share/man/man8/xfs_admin.8.gz
+# /usr/share/man/man8/xfs_logprint.8.gz
+# /usr/share/man/man5
+# /usr/share/man/man5/projects.5.gz
+# /usr/share/man/man5/xfs.5.gz
+# /usr/share/man/man5/projid.5.gz
+# /usr/share/locale
 dir /usr/share/locale/de 755 0 0
 dir /usr/share/locale/de/LC_MESSAGES 755 0 0
 file /usr/share/locale/de/LC_MESSAGES/xfsprogs.mo /usr/share/locale/de/LC_MESSAGES/xfsprogs.mo 644 0 0
 dir /usr/share/locale/pl 755 0 0
 dir /usr/share/locale/pl/LC_MESSAGES 755 0 0
 file /usr/share/locale/pl/LC_MESSAGES/xfsprogs.mo /usr/share/locale/pl/LC_MESSAGES/xfsprogs.mo 644 0 0
-# dir /usr/sbin 755 0 0
+# /usr/share/doc
+# /usr/share/doc/xfsprogs
+# /usr/share/doc/xfsprogs/CREDITS
+# /usr/share/doc/xfsprogs/changelog.Debian.gz
+# /usr/share/doc/xfsprogs/copyright
+# /usr/share/doc/xfsprogs/README
+# /usr/share/doc/xfsprogs/CHANGES.gz
+# /usr/share/doc/xfsprogs/changelog.gz
+# /usr/sbin
 file /usr/sbin/xfs_io /usr/sbin/xfs_io 755 0 0
 file /usr/sbin/xfs_copy /usr/sbin/xfs_copy 755 0 0
 file /usr/sbin/xfs_mkfile /usr/sbin/xfs_mkfile 755 0 0
@@ -37,11 +67,12 @@ file /usr/sbin/xfs_db /usr/sbin/xfs_db 755 0 0
 file /usr/sbin/xfs_logprint /usr/sbin/xfs_logprint 755 0 0
 file /usr/sbin/xfs_metadump /usr/sbin/xfs_metadump 755 0 0
 file /usr/sbin/xfs_ncheck /usr/sbin/xfs_ncheck 755 0 0
-# dir /lib 755 0 0
+# /lib
 file /lib/libhandle.so.1.0.3 /lib/libhandle.so.1.0.3 644 0 0
-# dir /sbin 755 0 0
+# /sbin
 file /sbin/fsck.xfs /sbin/fsck.xfs 755 0 0
 file /sbin/mkfs.xfs /sbin/mkfs.xfs 755 0 0
 file /sbin/xfs_repair /sbin/xfs_repair 755 0 0
+# /usr/share/man/man8/xfs_info.8.gz
 slink /lib/libhandle.so.1 /lib/libhandle.so.1.0.3 777 0 0
 # vim: set filetype=config shiftwidth=2 tabstop=2 paste:

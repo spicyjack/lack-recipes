@@ -1,30 +1,60 @@
-# name: ifupdown - 0.6.10
-# description: example package with comments
-# depends: run-parts
-# helpcommand: /usr/bin/somebin --help
-# versioncommand: /usr/bin/somebin --version
-# examplecommand: /usr/bin/somebin -x -y -z 10
-#
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-dir /sbin 755 0 0
-file /sbin/ifup /sbin/ifup 755 0 0
-file /sbin/ifdown /sbin/ifdown 755 0 0
-#dir /usr 755 0 0
-#dir /usr/share 755 0 0
-#dir /usr/share/ifupdown 755 0 0
-#file /usr/share/ifupdown/upgrade-from-0.5.x.pl /usr/share/ifupdown/upgrade-from-0.5.x.pl 755 0 0
-dir /etc 755 0 0
-#dir /etc/init.d 755 0 0
-#file /etc/init.d/ifupdown /etc/init.d/ifupdown 755 0 0
-#file /etc/init.d/ifupdown-clean /etc/init.d/ifupdown-clean 755 0 0
-dir /etc/network 755 0 0
-dir /etc/network/if-up.d 755 0 0
+# package name/version: ifupdown / 0.7.8
+#
+# /.
+# /etc
+# /etc/init.d
+file /etc/init.d/networking /etc/init.d/networking 755 0 0
+# /etc/init
+file /etc/init/network-interface.conf /etc/init/network-interface.conf 644 0 0
+file /etc/init/networking.conf /etc/init/networking.conf 644 0 0
+file /etc/init/network-interface-security.conf /etc/init/network-interface-security.conf 644 0 0
+file /etc/init/network-interface-container.conf /etc/init/network-interface-container.conf 644 0 0
+# /etc/network
 dir /etc/network/if-post-down.d 755 0 0
 dir /etc/network/if-down.d 755 0 0
+file /etc/network/if-down.d/upstart /etc/network/if-down.d/upstart 755 0 0
 dir /etc/network/if-pre-up.d 755 0 0
-#dir /etc/default 755 0 0
-#file /etc/default/ifupdown /etc/default/ifupdown 644 0 0
-# vi: set shiftwidth=4 tabstop=4 paste:
+dir /etc/network/if-up.d 755 0 0
+file /etc/network/if-up.d/upstart /etc/network/if-up.d/upstart 755 0 0
+dir /etc/default 755 0 0
+file /etc/default/networking /etc/default/networking 644 0 0
+# /usr
+# /usr/share
+# /usr/share/man
+# /usr/share/man/man5
+# /usr/share/man/man5/interfaces.5.gz
+# /usr/share/man/man8
+# /usr/share/man/man8/ifup.8.gz
+# /usr/share/doc
+# /usr/share/doc/ifupdown
+# /usr/share/doc/ifupdown/TODO
+# /usr/share/doc/ifupdown/contrib
+# /usr/share/doc/ifupdown/contrib/ifstate-check
+# /usr/share/doc/ifupdown/contrib/ifstate
+# /usr/share/doc/ifupdown/contrib/ensureifup
+# /usr/share/doc/ifupdown/examples
+# /usr/share/doc/ifupdown/examples/network-interfaces.gz
+# /usr/share/doc/ifupdown/examples/pcmcia-compat.sh
+# /usr/share/doc/ifupdown/examples/bridge
+# /usr/share/doc/ifupdown/examples/ping-places.sh
+# /usr/share/doc/ifupdown/examples/check-mac-address.sh
+# /usr/share/doc/ifupdown/examples/generate-interfaces.pl.gz
+# /usr/share/doc/ifupdown/examples/get-mac-address.sh
+# /usr/share/doc/ifupdown/changelog.gz
+# /usr/share/doc/ifupdown/copyright
+# /usr/share/doc/ifupdown/README
+# /usr/share/doc/ifupdown/NEWS.Debian.gz
+dir /usr/share/lintian 755 0 0
+dir /usr/share/lintian/overrides 755 0 0
+file /usr/share/lintian/overrides/ifupdown /usr/share/lintian/overrides/ifupdown 644 0 0
+# /sbin
+file /sbin/ifdown /sbin/ifdown 755 0 0
+file /sbin/ifup /sbin/ifup 755 0 0
+file /sbin/ifquery /sbin/ifquery 755 0 0
+# /usr/share/man/man8/ifquery.8.gz
+# /usr/share/man/man8/ifdown.8.gz
+# vim: set filetype=config shiftwidth=2 tabstop=2 paste:

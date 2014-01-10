@@ -1,18 +1,90 @@
-# package name/version: openssl / 1.0.1e-2+deb7u3
-# description: example package with comments
-# depends: _base otherpackage1 otherpackage2
-# helpcommand: /usr/bin/somebin --help
-# versioncommand: /usr/bin/somebin --version
-# examplecommand: /usr/bin/somebin -x -y -z 10
-#
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
+# package name/version: openssl / 1.0.1e-2+deb7u3
+#
+# /.
+# /etc
 dir /etc/ssl 755 0 0
 dir /etc/ssl/private 700 0 0
 dir /etc/ssl/certs 755 0 0
 file /etc/ssl/openssl.cnf /etc/ssl/openssl.cnf 644 0 0
+# /usr
+# /usr/share
+# /usr/share/man
+# /usr/share/man/man5
+# /usr/share/man/man5/x509v3_config.5ssl.gz
+# /usr/share/man/man5/config.5ssl.gz
+# /usr/share/man/man7
+# /usr/share/man/man7/des_modes.7ssl.gz
+# /usr/share/man/man1
+# /usr/share/man/man1/dsa.1ssl.gz
+# /usr/share/man/man1/genpkey.1ssl.gz
+# /usr/share/man/man1/s_client.1ssl.gz
+# /usr/share/man/man1/c_rehash.1ssl.gz
+# /usr/share/man/man1/req.1ssl.gz
+# /usr/share/man/man1/asn1parse.1ssl.gz
+# /usr/share/man/man1/sess_id.1ssl.gz
+# /usr/share/man/man1/cms.1ssl.gz
+# /usr/share/man/man1/ec.1ssl.gz
+# /usr/share/man/man1/enc.1ssl.gz
+# /usr/share/man/man1/version.1ssl.gz
+# /usr/share/man/man1/ocsp.1ssl.gz
+# /usr/share/man/man1/CA.pl.1ssl.gz
+# /usr/share/man/man1/pkcs7.1ssl.gz
+# /usr/share/man/man1/crl2pkcs7.1ssl.gz
+# /usr/share/man/man1/verify.1ssl.gz
+# /usr/share/man/man1/ca.1ssl.gz
+# /usr/share/man/man1/crl.1ssl.gz
+# /usr/share/man/man1/pkeyparam.1ssl.gz
+# /usr/share/man/man1/genrsa.1ssl.gz
+# /usr/share/man/man1/ciphers.1ssl.gz
+# /usr/share/man/man1/rsa.1ssl.gz
+# /usr/share/man/man1/dgst.1ssl.gz
+# /usr/share/man/man1/pkey.1ssl.gz
+# /usr/share/man/man1/smime.1ssl.gz
+# /usr/share/man/man1/openssl.1ssl.gz
+# /usr/share/man/man1/nseq.1ssl.gz
+# /usr/share/man/man1/gendsa.1ssl.gz
+# /usr/share/man/man1/ecparam.1ssl.gz
+# /usr/share/man/man1/dsaparam.1ssl.gz
+# /usr/share/man/man1/pkcs12.1ssl.gz
+# /usr/share/man/man1/rsautl.1ssl.gz
+# /usr/share/man/man1/passwd.1ssl.gz
+# /usr/share/man/man1/dhparam.1ssl.gz
+# /usr/share/man/man1/tsget.1ssl.gz
+# /usr/share/man/man1/speed.1ssl.gz
+# /usr/share/man/man1/rand.1ssl.gz
+# /usr/share/man/man1/spkac.1ssl.gz
+# /usr/share/man/man1/x509.1ssl.gz
+# /usr/share/man/man1/pkcs8.1ssl.gz
+# /usr/share/man/man1/errstr.1ssl.gz
+# /usr/share/man/man1/ts.1ssl.gz
+# /usr/share/man/man1/s_time.1ssl.gz
+# /usr/share/man/man1/pkeyutl.1ssl.gz
+# /usr/share/man/man1/s_server.1ssl.gz
+# /usr/share/doc
+# /usr/share/doc/openssl
+# /usr/share/doc/openssl/NEWS.gz
+# /usr/share/doc/openssl/changelog.Debian.gz
+# /usr/share/doc/openssl/openssl.txt.gz
+# /usr/share/doc/openssl/HOWTO
+# /usr/share/doc/openssl/HOWTO/proxy_certificates.txt.gz
+# /usr/share/doc/openssl/HOWTO/certificates.txt.gz
+# /usr/share/doc/openssl/HOWTO/keys.txt
+# /usr/share/doc/openssl/CHANGES.SSLeay.gz
+# /usr/share/doc/openssl/README.gz
+# /usr/share/doc/openssl/openssl_button.html
+# /usr/share/doc/openssl/openssl_button.gif
+# /usr/share/doc/openssl/changelog.gz
+# /usr/share/doc/openssl/fingerprints.txt
+# /usr/share/doc/openssl/standards.txt.gz
+# /usr/share/doc/openssl/copyright
+# /usr/share/doc/openssl/FAQ.gz
+# /usr/share/doc/openssl/README.Debian
+# /usr/share/doc/openssl/README.optimization
+# /usr/lib
 dir /usr/lib/ssl 755 0 0
 dir /usr/lib/ssl/misc 755 0 0
 file /usr/lib/ssl/misc/c_name /usr/lib/ssl/misc/c_name 755 0 0
@@ -22,8 +94,16 @@ file /usr/lib/ssl/misc/CA.pl /usr/lib/ssl/misc/CA.pl 755 0 0
 file /usr/lib/ssl/misc/CA.sh /usr/lib/ssl/misc/CA.sh 755 0 0
 file /usr/lib/ssl/misc/c_info /usr/lib/ssl/misc/c_info 755 0 0
 file /usr/lib/ssl/misc/tsget /usr/lib/ssl/misc/tsget 755 0 0
+# /usr/bin
 file /usr/bin/openssl /usr/bin/openssl 755 0 0
 file /usr/bin/c_rehash /usr/bin/c_rehash 755 0 0
+# /usr/share/man/man1/md2.1ssl.gz
+# /usr/share/man/man1/ripemd160.1ssl.gz
+# /usr/share/man/man1/sha1.1ssl.gz
+# /usr/share/man/man1/sha.1ssl.gz
+# /usr/share/man/man1/md4.1ssl.gz
+# /usr/share/man/man1/mdc2.1ssl.gz
+# /usr/share/man/man1/md5.1ssl.gz
 slink /usr/lib/ssl/private /etc/ssl/private 777 0 0
 slink /usr/lib/ssl/certs /etc/ssl/certs 777 0 0
 slink /usr/lib/ssl/openssl.cnf /etc/ssl/openssl.cnf 777 0 0

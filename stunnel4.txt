@@ -1,16 +1,70 @@
-# $Id: stunnel4.txt,v 1.4 2007-04-26 05:20:44 brian Exp $
-# depends: _base openssl
-# helpcommand: /usr/bin/stunnel4  --help
-# versioncommand: /usr/bin/stunnel4 --version
-# examplecommand: /usr/bin/stunnel4 -x -y -z 10
-#
+# dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-# stunnel4 /etc/stunnel
-# for config files, added in the individual project filelists
-dir /etc/stunnel 0755 0 0
-# stunnel4 /usr/bin
-file /usr/bin/stunnel4 /usr/bin/stunnel4 0755 0 0
-slink /usr/bin/stunnel /usr/bin/stunnel4 0755 0 0
-slink /usr/sbin/stunnel /usr/bin/stunnel4 0755 0 0
+# package name/version: stunnel4 / 3:4.53-1.1
+#
+# /.
+# /etc
+dir /etc/logrotate.d 755 0 0
+file /etc/logrotate.d/stunnel4 /etc/logrotate.d/stunnel4 644 0 0
+dir /etc/stunnel 755 0 0
+file /etc/stunnel/README /etc/stunnel/README 644 0 0
+dir /etc/ppp 755 0 0
+dir /etc/ppp/ip-down.d 755 0 0
+file /etc/ppp/ip-down.d/0stunnel4 /etc/ppp/ip-down.d/0stunnel4 755 0 0
+dir /etc/ppp/ip-up.d 755 0 0
+file /etc/ppp/ip-up.d/0stunnel4 /etc/ppp/ip-up.d/0stunnel4 755 0 0
+# /etc/init.d
+file /etc/init.d/stunnel4 /etc/init.d/stunnel4 755 0 0
+dir /etc/default 755 0 0
+file /etc/default/stunnel4 /etc/default/stunnel4 644 0 0
+# /usr
+# /usr/bin
+file /usr/bin/stunnel3 /usr/bin/stunnel3 755 0 0
+file /usr/bin/stunnel4 /usr/bin/stunnel4 755 0 0
+# /usr/lib
+dir /usr/lib/stunnel 755 0 0
+file /usr/lib/stunnel/libstunnel.so /usr/lib/stunnel/libstunnel.so 644 0 0
+# /usr/share
+# /usr/share/man
+# /usr/share/man/man8
+# /usr/share/man/man8/stunnel3.8.gz
+# /usr/share/man/man8/stunnel4.8.gz
+# /usr/share/man/fr
+# /usr/share/man/fr/man8
+# /usr/share/man/fr/man8/stunnel4.8.gz
+# /usr/share/man/pl
+# /usr/share/man/pl/man8
+# /usr/share/man/pl/man8/stunnel4.8.gz
+# /usr/share/doc-base
+# /usr/share/doc-base/stunnel4
+# /usr/share/doc
+# /usr/share/doc/stunnel4
+# /usr/share/doc/stunnel4/stunnel.pl.html
+# /usr/share/doc/stunnel4/stunnel.fr.html
+# /usr/share/doc/stunnel4/changelog.Debian.gz
+# /usr/share/doc/stunnel4/copyright
+# /usr/share/doc/stunnel4/examples
+# /usr/share/doc/stunnel4/examples/importCA.html
+# /usr/share/doc/stunnel4/examples/stunnel.conf-sample
+# /usr/share/doc/stunnel4/examples/importCA.sh
+# /usr/share/doc/stunnel4/examples/ca.html
+# /usr/share/doc/stunnel4/examples/ca.pl
+# /usr/share/doc/stunnel4/examples/stunnel.cnf
+# /usr/share/doc/stunnel4/README
+# /usr/share/doc/stunnel4/README.Debian
+# /usr/share/doc/stunnel4/NEWS.gz
+# /usr/share/doc/stunnel4/BUGS
+# /usr/share/doc/stunnel4/NEWS.Debian.gz
+# /usr/share/doc/stunnel4/contrib
+# /usr/share/doc/stunnel4/contrib/StunnelConf-0.1.pl
+# /usr/share/doc/stunnel4/changelog.gz
+# /usr/share/doc/stunnel4/stunnel.html
+# /usr/share/doc/stunnel4/TODO
+dir /usr/share/lintian 755 0 0
+dir /usr/share/lintian/overrides 755 0 0
+file /usr/share/lintian/overrides/stunnel4 /usr/share/lintian/overrides/stunnel4 644 0 0
+slink /usr/bin/stunnel /usr/bin/stunnel3 777 0 0
+# /usr/share/man/man8/stunnel.8.gz
+# vim: set filetype=config shiftwidth=2 tabstop=2 paste:

@@ -1,15 +1,11 @@
-# package name/version: e2fsprogs / 1.42.5-1.1
-# description: example package with comments
-# depends: _base otherpackage1 otherpackage2
-# helpcommand: /usr/bin/somebin --help
-# versioncommand: /usr/bin/somebin --version
-# examplecommand: /usr/bin/somebin -x -y -z 10
-#
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-# dir /sbin 755 0 0
+# package name/version: e2fsprogs / 1.42.5-1.1
+#
+# /.
+# /sbin
 file /sbin/tune2fs /sbin/tune2fs 755 0 0
 file /sbin/logsave /sbin/logsave 755 0 0
 file /sbin/badblocks /sbin/badblocks 755 0 0
@@ -17,22 +13,29 @@ file /sbin/e2image /sbin/e2image 755 0 0
 file /sbin/resize2fs /sbin/resize2fs 755 0 0
 file /sbin/dumpe2fs /sbin/dumpe2fs 755 0 0
 file /sbin/mke2fs /sbin/mke2fs 755 0 0
+# /sbin/debugfs
 file /sbin/e2fsck /sbin/e2fsck 755 0 0
 file /sbin/e2undo /sbin/e2undo 755 0 0
-# dir /etc 755 0 0
+# /etc
 file /etc/mke2fs.conf /etc/mke2fs.conf 644 0 0
-# dir /usr 755 0 0
-# dir /usr/lib 755 0 0
-# dir /usr/bin 755 0 0
+# /usr
+# /usr/lib
+# /usr/bin
 file /usr/bin/lsattr /usr/bin/lsattr 755 0 0
 file /usr/bin/chattr /usr/bin/chattr 755 0 0
-# dir /usr/sbin 755 0 0
+# /usr/sbin
 file /usr/sbin/mklost+found /usr/sbin/mklost+found 755 0 0
 file /usr/sbin/filefrag /usr/sbin/filefrag 755 0 0
 file /usr/sbin/e4defrag /usr/sbin/e4defrag 755 0 0
 file /usr/sbin/e2freefrag /usr/sbin/e2freefrag 755 0 0
-# dir /usr/share 755 0 0
-# dir /usr/share/locale 755 0 0
+# /usr/share
+# /usr/share/doc
+# /usr/share/doc/e2fsprogs
+# /usr/share/doc/e2fsprogs/changelog.Debian.gz
+# /usr/share/doc/e2fsprogs/README
+# /usr/share/doc/e2fsprogs/copyright
+# /usr/share/doc/e2fsprogs/RELEASE-NOTES.gz
+# /usr/share/locale
 dir /usr/share/locale/sv 755 0 0
 dir /usr/share/locale/sv/LC_MESSAGES 755 0 0
 file /usr/share/locale/sv/LC_MESSAGES/e2fsprogs.mo /usr/share/locale/sv/LC_MESSAGES/e2fsprogs.mo 644 0 0
@@ -72,6 +75,29 @@ file /usr/share/locale/zh_CN/LC_MESSAGES/e2fsprogs.mo /usr/share/locale/zh_CN/LC
 dir /usr/share/locale/cs 755 0 0
 dir /usr/share/locale/cs/LC_MESSAGES 755 0 0
 file /usr/share/locale/cs/LC_MESSAGES/e2fsprogs.mo /usr/share/locale/cs/LC_MESSAGES/e2fsprogs.mo 644 0 0
+# /usr/share/man
+# /usr/share/man/man8
+# /usr/share/man/man8/e2image.8.gz
+# /usr/share/man/man8/filefrag.8.gz
+# /usr/share/man/man8/mke2fs.8.gz
+# /usr/share/man/man8/dumpe2fs.8.gz
+# /usr/share/man/man8/e2undo.8.gz
+# /usr/share/man/man8/debugfs.8.gz
+# /usr/share/man/man8/logsave.8.gz
+# /usr/share/man/man8/tune2fs.8.gz
+# /usr/share/man/man8/mklost+found.8.gz
+# /usr/share/man/man8/resize2fs.8.gz
+# /usr/share/man/man8/e2label.8.gz
+# /usr/share/man/man8/e2fsck.8.gz
+# /usr/share/man/man8/badblocks.8.gz
+# /usr/share/man/man8/e2freefrag.8.gz
+# /usr/share/man/man8/e4defrag.8.gz
+# /usr/share/man/man5
+# /usr/share/man/man5/mke2fs.conf.5.gz
+# /usr/share/man/man5/e2fsck.conf.5.gz
+# /usr/share/man/man1
+# /usr/share/man/man1/chattr.1.gz
+# /usr/share/man/man1/lsattr.1.gz
 slink /sbin/mkfs.ext4dev /sbin/mke2fs 777 0 0
 slink /sbin/mkfs.ext4 /sbin/mke2fs 777 0 0
 slink /sbin/fsck.ext4dev /sbin/e2fsck 777 0 0
@@ -81,4 +107,12 @@ slink /sbin/fsck.ext4 /sbin/e2fsck 777 0 0
 slink /sbin/e2label /sbin/tune2fs 777 0 0
 slink /sbin/fsck.ext2 /sbin/e2fsck 777 0 0
 slink /sbin/mkfs.ext3 /sbin/mke2fs 777 0 0
+# /usr/share/man/man8/mkfs.ext2.8.gz
+# /usr/share/man/man8/mkfs.ext4dev.8.gz
+# /usr/share/man/man8/fsck.ext4dev.8.gz
+# /usr/share/man/man8/mkfs.ext3.8.gz
+# /usr/share/man/man8/mkfs.ext4.8.gz
+# /usr/share/man/man8/fsck.ext4.8.gz
+# /usr/share/man/man8/fsck.ext2.8.gz
+# /usr/share/man/man8/fsck.ext3.8.gz
 # vim: set filetype=config shiftwidth=2 tabstop=2 paste:

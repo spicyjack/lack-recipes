@@ -1,32 +1,41 @@
-# $Id: dhclient.txt,v 1.10 2009-04-09 06:34:36 brian Exp $
-# description: DHCP client from ISC
-# depends: _base 
-# helpcommand: /sbin/dhclient --help
-# versioncommand: /sbin/dhclient --help
-# examplecommand: /sbin/dhclient <ethernet interface> 
-#
+# dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-# for whatever reason, dhclient now wants things in a different place on the
-# initramfs image instead of how it wants things on a stock debian image.  Lack
-# of a config file perhaps?
+# package name/version: isc-dhcp-client / 4.2.2.dfsg.1-5+deb70u6
 #
-# dhclient /var/lib 
-dir /etc 0755 0 0
-dir /etc/network 0755 0 0
-dir /etc/network/if-down.d 0755 0 0
-dir /etc/network/if-post-down.d 0755 0 0
-dir /etc/network/if-pre-up.d 0755 0 0
-dir /etc/network/if-up.d 0755 0 0
-# dhclient /var/lib 
-dir /var 0755 0 0
-dir /var/lib 0755 0 0
-dir /var/lib/dhcp3 0755 0 0
-slink /var/lib/dhcp /var/lib/dhcp3 0755 0 0
-# dhclient /sbin
-dir /sbin 0755 0 0
-file /sbin/dhclient /sbin/dhclient 0755 0 0
-file /sbin/dhclient-script :LACK_BASE:/scripts/dhclient-script 0755 0 0
-slink /etc/dhclient-script /sbin/dhclient-script 0755 0 0
-# vi: set sw=4 ts=4 paste:
+# /.
+# /var
+# /var/run
+# /var/lib
+dir /var/lib/dhcp 755 0 0
+# /sbin
+file /sbin/dhclient-script /sbin/dhclient-script 755 0 0
+file /sbin/dhclient /sbin/dhclient 755 0 0
+# /etc
+dir /etc/dhcp 755 0 0
+file /etc/dhcp/dhclient.conf /etc/dhcp/dhclient.conf 644 0 0
+dir /etc/dhcp/dhclient-exit-hooks.d 755 0 0
+# /etc/dhcp/dhclient-exit-hooks.d/debug
+file /etc/dhcp/dhclient-exit-hooks.d/rfc3442-classless-routes /etc/dhcp/dhclient-exit-hooks.d/rfc3442-classless-routes 644 0 0
+dir /etc/dhcp/dhclient-enter-hooks.d 755 0 0
+# /etc/dhcp/dhclient-enter-hooks.d/debug
+# /usr
+# /usr/share
+# /usr/share/doc
+# /usr/share/doc/isc-dhcp-client
+# /usr/share/doc/isc-dhcp-client/copyright
+# /usr/share/doc/isc-dhcp-client/README.Debian
+# /usr/share/doc/isc-dhcp-client/NEWS.Debian.gz
+# /usr/share/doc/isc-dhcp-client/changelog.Debian.gz
+# /usr/share/man
+# /usr/share/man/man8
+# /usr/share/man/man8/dhclient-script.8.gz
+# /usr/share/man/man8/dhclient.8.gz
+# /usr/share/man/man5
+# /usr/share/man/man5/dhclient.conf.5.gz
+# /usr/share/man/man5/dhclient.leases.5.gz
+dir /usr/share/lintian 755 0 0
+dir /usr/share/lintian/overrides 755 0 0
+file /usr/share/lintian/overrides/isc-dhcp-client /usr/share/lintian/overrides/isc-dhcp-client 644 0 0
+# vim: set filetype=config shiftwidth=2 tabstop=2 paste:

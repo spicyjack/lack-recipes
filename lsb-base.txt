@@ -1,19 +1,21 @@
-# package name/version: lsb-base / 4.1+Debian8
-# description: example package with comments
-# depends: _base otherpackage1 otherpackage2
-# helpcommand: /usr/bin/somebin --help
-# versioncommand: /usr/bin/somebin --version
-# examplecommand: /usr/bin/somebin -x -y -z 10
-#
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-dir /usr 755 0 0
-dir /usr/share 755 0 0
-dir /lib 755 0 0
+# package name/version: lsb-base / 4.1+Debian8+deb7u1
+#
+# /.
+# /lib
 dir /lib/lsb 755 0 0
-file /lib/lsb/init-functions /lib/lsb/init-functions 644 0 0
 dir /lib/lsb/init-functions.d 755 0 0
 file /lib/lsb/init-functions.d/20-left-info-blocks /lib/lsb/init-functions.d/20-left-info-blocks 644 0 0
+file /lib/lsb/init-functions /lib/lsb/init-functions 644 0 0
+# /usr
+# /usr/share
+# /usr/share/doc
+# /usr/share/doc/lsb-base
+# /usr/share/doc/lsb-base/NEWS.Debian.gz
+# /usr/share/doc/lsb-base/copyright
+# /usr/share/doc/lsb-base/README.Debian.gz
+# /usr/share/doc/lsb-base/changelog.gz
 # vim: set filetype=config shiftwidth=2 tabstop=2 paste:

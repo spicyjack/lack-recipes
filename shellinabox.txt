@@ -1,33 +1,41 @@
-# $Id: shellinabox.txt,v 1.7 2009-08-10 08:38:58 brian Exp $
-# description: example package with comments
-# depends: _base otherpackage1 otherpackage2
-# packages: libssl-dev
-# helpcommand: /usr/bin/somebin --help
-# versioncommand: /usr/bin/somebin --version
-# examplecommand: /usr/bin/somebin -x -y -z 10
-# build with: ./configure --prefix=/usr/local/stow/shellinabox-2.10 \
-# --disable-runtime-loading --disable-pam; make
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-dir /usr 0755 0 0
-dir /usr/bin 0755 0 0
-file /usr/bin/shellinaboxd /usr/local/stow/shellinabox-2.10/bin/shellinaboxd 755 0 0
-dir /etc 0755 0 0
-dir /etc/shellinabox 0755 0 0
-file /etc/shellinabox/color.css /usr/local/stow/shellinabox-2.10/share/doc/shellinabox/color.css 644 0 0
-file /etc/shellinabox/monochrome.css /usr/local/stow/shellinabox-2.10/share/doc/shellinabox/monochrome.css 644 0 0
-file /etc/shellinabox/white-on-black.css /usr/local/stow/shellinabox-2.10/share/doc/shellinabox/white-on-black.css 644 0 0
-file /etc/shellinabox/black-on-white.css /usr/local/stow/shellinabox-2.10/share/doc/shellinabox/black-on-white.css 644 0 0
-# screens
-dir /lib 0755 0 0
-dir /lib/terminfo 0755 0 0
-dir /lib/terminfo/x 0755 0 0
-file /lib/terminfo/x/xterm /lib/terminfo/x/xterm 0644 0 0
-dir /usr 0755 0 0
-dir /usr/share 0755 0 0
-dir /usr/share/terminfo 0755 0 0
-dir /usr/share/terminfo/x 0755 0 0
-slink /usr/share/terminfo/x/xterm /usr/share/terminfo/x/xterm 0644 0 0
-# vi: set sw=4 ts=4 paste:
+# package name/version: shellinabox / 2.14-1
+#
+# /.
+# /etc
+# /etc/init.d
+file /etc/init.d/shellinabox /etc/init.d/shellinabox 755 0 0
+dir /etc/shellinabox 755 0 0
+dir /etc/shellinabox/options-enabled 755 0 0
+file /etc/shellinabox/options-enabled/README /etc/shellinabox/options-enabled/README 644 0 0
+dir /etc/shellinabox/options-available 755 0 0
+file /etc/shellinabox/options-available/README /etc/shellinabox/options-available/README 644 0 0
+file /etc/shellinabox/options-available/01_Monochrome.css /etc/shellinabox/options-available/01_Monochrome.css 644 0 0
+dir /etc/default 755 0 0
+file /etc/default/shellinabox /etc/default/shellinabox 644 0 0
+# /usr
+# /usr/bin
+file /usr/bin/shellinaboxd /usr/bin/shellinaboxd 755 0 0
+# /usr/share
+# /usr/share/man
+# /usr/share/man/man1
+# /usr/share/man/man1/shellinaboxd.1.gz
+# /usr/share/doc
+# /usr/share/doc/shellinabox
+# /usr/share/doc/shellinabox/AUTHORS
+# /usr/share/doc/shellinabox/changelog.Debian.gz
+# /usr/share/doc/shellinabox/copyright
+# /usr/share/doc/shellinabox/examples
+# /usr/share/doc/shellinabox/examples/cgi-mode-example.sh
+# /usr/share/doc/shellinabox/README
+# /usr/share/doc/shellinabox/NEWS.gz
+# /usr/share/doc/shellinabox/changelog.gz
+# /usr/share/doc/shellinabox/TODO
+dir /usr/share/lintian 755 0 0
+dir /usr/share/lintian/overrides 755 0 0
+file /usr/share/lintian/overrides/shellinabox /usr/share/lintian/overrides/shellinabox 644 0 0
+slink /etc/shellinabox/options-enabled/01_Monochrome.css /etc/shellinabox/options-available/01_Monochrome.css 777 0 0
+# vim: set filetype=config shiftwidth=2 tabstop=2 paste:

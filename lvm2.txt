@@ -1,89 +1,136 @@
-# name: lvm2 - 2.02.66-5
-# description: example package with comments
-# depends: _base otherpackage1 otherpackage2
-# helpcommand: /usr/bin/somebin --help
-# versioncommand: /usr/bin/somebin --version
-# examplecommand: /usr/bin/somebin -x -y -z 10
-#
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-# libdevmapper1.02.1 - 2:1.02.48-5
-dir /usr 755 0 0
-dir /usr/share 755 0 0
-dir /lib 755 0 0
-file /lib/libdevmapper.so.1.02.1 /lib/libdevmapper.so.1.02.1 644 0 0
-file /lib/libreadline.so.5.2 /lib/libreadline.so.5.2 644 0 0
-slink /lib/libreadline.so.5 /lib/libreadline.so.5.2 644 0 0
-# lvm2 - 2.02.66-5
-dir /etc 755 0 0
-dir /etc/lvm 755 0 0
-file /etc/lvm/lvm.conf /etc/lvm/lvm.conf 644 0 0
-file /etc/lvmtab :LACK_BASE:/etcfiles/lvmtab 0644 0 0
-#dir /etc/init.d 755 0 0
-#file /etc/init.d/lvm2 /etc/init.d/lvm2 755 0 0
-#dir /usr 755 0 0
-#dir /usr/share 755 0 0
-#dir /usr/share/initramfs-tools 755 0 0
-#dir /usr/share/initramfs-tools/scripts 755 0 0
-#dir /usr/share/initramfs-tools/scripts/local-top 755 0 0
-#file /usr/share/initramfs-tools/scripts/local-top/lvm2 /usr/share/initramfs-tools/scripts/local-top/lvm2 755 0 0
-#dir /usr/share/initramfs-tools/hooks 755 0 0
-#file /usr/share/initramfs-tools/hooks/lvm2 /usr/share/initramfs-tools/hooks/lvm2 755 0 0
-dir /lib 755 0 0
+# package name/version: lvm2 / 2.02.95-8
+#
+# /.
+# /lib
 dir /lib/udev 755 0 0
 dir /lib/udev/rules.d 755 0 0
 file /lib/udev/rules.d/56-lvm.rules /lib/udev/rules.d/56-lvm.rules 644 0 0
-file /lib/udev/rules.d/60-persistent-storage-lvm.rules /lib/udev/rules.d/60-persistent-storage-lvm.rules 644 0 0
-# lvm programs
-dir /sbin 755 0 0
-file /sbin/fsadm /sbin/fsadm 755 0 0
-file /sbin/lvm /sbin/lvm 755 0 0
-file /sbin/lvmconf /sbin/lvmconf 755 0 0
+# /sbin
 file /sbin/lvmdump /sbin/lvmdump 755 0 0
+file /sbin/lvmconf /sbin/lvmconf 755 0 0
+file /sbin/lvm /sbin/lvm 755 0 0
+file /sbin/fsadm /sbin/fsadm 755 0 0
 file /sbin/vgimportclone /sbin/vgimportclone 755 0 0
-# lvm symlinks
-slink /sbin/lvchange /sbin/lvm 777 0 0
-slink /sbin/lvconvert /sbin/lvm 777 0 0
-slink /sbin/lvcreate /sbin/lvm 777 0 0
-slink /sbin/lvdisplay /sbin/lvm 777 0 0
-slink /sbin/lvextend /sbin/lvm 777 0 0
-slink /sbin/lvmchange /sbin/lvm 777 0 0
+# /etc
+dir /etc/lvm 755 0 0
+file /etc/lvm/lvm.conf /etc/lvm/lvm.conf 644 0 0
+# /etc/init.d
+file /etc/init.d/lvm2 /etc/init.d/lvm2 755 0 0
+# /usr
+# /usr/share
+# /usr/share/doc
+# /usr/share/doc/lvm2
+# /usr/share/doc/lvm2/tagging.txt.gz
+# /usr/share/doc/lvm2/changelog.gz
+# /usr/share/doc/lvm2/lvm_fault_handling.txt.gz
+# /usr/share/doc/lvm2/copyright
+# /usr/share/doc/lvm2/lvm2-raid.txt.gz
+# /usr/share/doc/lvm2/README.udev
+# /usr/share/doc/lvm2/changelog.Debian.gz
+# /usr/share/doc/lvm2/testing.txt
+# /usr/share/doc/lvm2/udev_assembly.txt
+# /usr/share/doc/lvm2/pvmove_outline.txt
+# /usr/share/doc/lvm2/lvmetad_design.txt.gz
+# /usr/share/man
+# /usr/share/man/man8
+# /usr/share/man/man8/vgimport.8.gz
+# /usr/share/man/man8/vgcreate.8.gz
+# /usr/share/man/man8/vgexport.8.gz
+# /usr/share/man/man8/pvchange.8.gz
+# /usr/share/man/man8/pvremove.8.gz
+# /usr/share/man/man8/lvdisplay.8.gz
+# /usr/share/man/man8/lvcreate.8.gz
+# /usr/share/man/man8/pvmove.8.gz
+# /usr/share/man/man8/vgimportclone.8.gz
+# /usr/share/man/man8/lvrename.8.gz
+# /usr/share/man/man8/pvresize.8.gz
+# /usr/share/man/man8/vgs.8.gz
+# /usr/share/man/man8/vgchange.8.gz
+# /usr/share/man/man8/vgmerge.8.gz
+# /usr/share/man/man8/lvmsadc.8.gz
+# /usr/share/man/man8/pvdisplay.8.gz
+# /usr/share/man/man8/lvmchange.8.gz
+# /usr/share/man/man8/lvconvert.8.gz
+# /usr/share/man/man8/vgcfgrestore.8.gz
+# /usr/share/man/man8/lvremove.8.gz
+# /usr/share/man/man8/vgconvert.8.gz
+# /usr/share/man/man8/lvmdump.8.gz
+# /usr/share/man/man8/lvmconf.8.gz
+# /usr/share/man/man8/vgremove.8.gz
+# /usr/share/man/man8/pvck.8.gz
+# /usr/share/man/man8/lvscan.8.gz
+# /usr/share/man/man8/lvreduce.8.gz
+# /usr/share/man/man8/vgdisplay.8.gz
+# /usr/share/man/man8/vgck.8.gz
+# /usr/share/man/man8/vgscan.8.gz
+# /usr/share/man/man8/vgrename.8.gz
+# /usr/share/man/man8/pvcreate.8.gz
+# /usr/share/man/man8/lvextend.8.gz
+# /usr/share/man/man8/lvchange.8.gz
+# /usr/share/man/man8/vgextend.8.gz
+# /usr/share/man/man8/pvs.8.gz
+# /usr/share/man/man8/vgmknodes.8.gz
+# /usr/share/man/man8/lvm.8.gz
+# /usr/share/man/man8/vgsplit.8.gz
+# /usr/share/man/man8/vgreduce.8.gz
+# /usr/share/man/man8/lvresize.8.gz
+# /usr/share/man/man8/lvmsar.8.gz
+# /usr/share/man/man8/pvscan.8.gz
+# /usr/share/man/man8/lvmdiskscan.8.gz
+# /usr/share/man/man8/lvs.8.gz
+# /usr/share/man/man8/vgcfgbackup.8.gz
+# /usr/share/man/man5
+# /usr/share/man/man5/lvm.conf.5.gz
+dir /usr/share/initramfs-tools 755 0 0
+dir /usr/share/initramfs-tools/scripts 755 0 0
+dir /usr/share/initramfs-tools/scripts/local-top 755 0 0
+file /usr/share/initramfs-tools/scripts/local-top/lvm2 /usr/share/initramfs-tools/scripts/local-top/lvm2 755 0 0
+dir /usr/share/initramfs-tools/hooks 755 0 0
+file /usr/share/initramfs-tools/hooks/lvm2 /usr/share/initramfs-tools/hooks/lvm2 755 0 0
+slink /sbin/vgcreate /sbin/lvm 777 0 0
+slink /sbin/vgs /sbin/lvm 777 0 0
+slink /sbin/vgcfgrestore /sbin/lvm 777 0 0
 slink /sbin/lvmdiskscan /sbin/lvm 777 0 0
-slink /sbin/lvmsadc /sbin/lvm 777 0 0
+slink /sbin/pvck /sbin/lvm 777 0 0
+slink /sbin/vgdisplay /sbin/lvm 777 0 0
+slink /sbin/vgchange /sbin/lvm 777 0 0
+slink /sbin/pvscan /sbin/lvm 777 0 0
+slink /sbin/vgimport /sbin/lvm 777 0 0
+slink /sbin/pvresize /sbin/lvm 777 0 0
+slink /sbin/vgmknodes /sbin/lvm 777 0 0
+slink /sbin/lvscan /sbin/lvm 777 0 0
+slink /sbin/lvcreate /sbin/lvm 777 0 0
+slink /sbin/vgscan /sbin/lvm 777 0 0
+slink /sbin/lvremove /sbin/lvm 777 0 0
+slink /sbin/pvremove /sbin/lvm 777 0 0
+slink /sbin/pvs /sbin/lvm 777 0 0
+slink /sbin/vgmerge /sbin/lvm 777 0 0
+slink /sbin/pvmove /sbin/lvm 777 0 0
+slink /sbin/vgrename /sbin/lvm 777 0 0
+slink /sbin/lvresize /sbin/lvm 777 0 0
+slink /sbin/vgreduce /sbin/lvm 777 0 0
 slink /sbin/lvmsar /sbin/lvm 777 0 0
 slink /sbin/lvreduce /sbin/lvm 777 0 0
-slink /sbin/lvremove /sbin/lvm 777 0 0
-slink /sbin/lvrename /sbin/lvm 777 0 0
-slink /sbin/lvresize /sbin/lvm 777 0 0
-slink /sbin/lvs /sbin/lvm 777 0 0
-slink /sbin/lvscan /sbin/lvm 777 0 0
-slink /sbin/pvchange /sbin/lvm 777 0 0
-slink /sbin/pvck /sbin/lvm 777 0 0
+slink /sbin/vgexport /sbin/lvm 777 0 0
+slink /sbin/vgcfgbackup /sbin/lvm 777 0 0
+slink /sbin/vgck /sbin/lvm 777 0 0
+slink /sbin/lvdisplay /sbin/lvm 777 0 0
 slink /sbin/pvcreate /sbin/lvm 777 0 0
 slink /sbin/pvdisplay /sbin/lvm 777 0 0
-slink /sbin/pvmove /sbin/lvm 777 0 0
-slink /sbin/pvremove /sbin/lvm 777 0 0
-slink /sbin/pvresize /sbin/lvm 777 0 0
-slink /sbin/pvs /sbin/lvm 777 0 0
-slink /sbin/pvscan /sbin/lvm 777 0 0
-slink /sbin/vgcfgbackup /sbin/lvm 777 0 0
-slink /sbin/vgcfgrestore /sbin/lvm 777 0 0
-slink /sbin/vgchange /sbin/lvm 777 0 0
-slink /sbin/vgck /sbin/lvm 777 0 0
-slink /sbin/vgconvert /sbin/lvm 777 0 0
-slink /sbin/vgcreate /sbin/lvm 777 0 0
-slink /sbin/vgdisplay /sbin/lvm 777 0 0
-slink /sbin/vgexport /sbin/lvm 777 0 0
-slink /sbin/vgextend /sbin/lvm 777 0 0
-slink /sbin/vgimport /sbin/lvm 777 0 0
-slink /sbin/vgmerge /sbin/lvm 777 0 0
-slink /sbin/vgmknodes /sbin/lvm 777 0 0
-slink /sbin/vgreduce /sbin/lvm 777 0 0
 slink /sbin/vgremove /sbin/lvm 777 0 0
-slink /sbin/vgrename /sbin/lvm 777 0 0
-slink /sbin/vgs /sbin/lvm 777 0 0
-slink /sbin/vgscan /sbin/lvm 777 0 0
+slink /sbin/lvchange /sbin/lvm 777 0 0
+slink /sbin/lvmchange /sbin/lvm 777 0 0
+slink /sbin/vgconvert /sbin/lvm 777 0 0
+slink /sbin/lvrename /sbin/lvm 777 0 0
+slink /sbin/lvs /sbin/lvm 777 0 0
 slink /sbin/vgsplit /sbin/lvm 777 0 0
-# vi: set shiftwidth=4 tabstop=4 paste:
+slink /sbin/vgextend /sbin/lvm 777 0 0
+slink /sbin/lvconvert /sbin/lvm 777 0 0
+slink /sbin/lvextend /sbin/lvm 777 0 0
+slink /sbin/pvchange /sbin/lvm 777 0 0
+slink /sbin/lvmsadc /sbin/lvm 777 0 0
+# vim: set filetype=config shiftwidth=2 tabstop=2 paste:

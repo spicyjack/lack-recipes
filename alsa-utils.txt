@@ -1,26 +1,22 @@
-# name: alsa-utils - 1.0.25-4
-# description: example package with comments
-# depends: _base otherpackage1 otherpackage2
-# helpcommand: /usr/bin/somebin --help
-# versioncommand: /usr/bin/somebin --version
-# examplecommand: /usr/bin/somebin -x -y -z 10
-#
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-dir /lib 755 0 0
+# package name/version: alsa-utils / 1.0.25-4
+#
+# /.
+# /lib
 dir /lib/udev 755 0 0
 dir /lib/udev/rules.d 755 0 0
 file /lib/udev/rules.d/90-alsa-restore.rules /lib/udev/rules.d/90-alsa-restore.rules 644 0 0
-dir /etc 755 0 0
-dir /etc/init.d 755 0 0
+# /etc
+# /etc/init.d
 file /etc/init.d/alsa-utils /etc/init.d/alsa-utils 755 0 0
-dir /var 755 0 0
-dir /var/lib 755 0 0
+# /var
+# /var/lib
 dir /var/lib/alsa 755 0 0
-dir /usr 755 0 0
-dir /usr/bin 755 0 0
+# /usr
+# /usr/bin
 file /usr/bin/aplay /usr/bin/aplay 755 0 0
 file /usr/bin/amixer /usr/bin/amixer 755 0 0
 file /usr/bin/arecordmidi /usr/bin/arecordmidi 755 0 0
@@ -34,13 +30,20 @@ file /usr/bin/amidi /usr/bin/amidi 755 0 0
 file /usr/bin/alsaloop /usr/bin/alsaloop 755 0 0
 file /usr/bin/aplaymidi /usr/bin/aplaymidi 755 0 0
 file /usr/bin/aseqdump /usr/bin/aseqdump 755 0 0
-dir /usr/sbin 755 0 0
+# /usr/sbin
 file /usr/sbin/alsactl /usr/sbin/alsactl 755 0 0
-dir /usr/share 755 0 0
+# /usr/share
+# /usr/share/doc
+# /usr/share/doc/alsa-utils
+# /usr/share/doc/alsa-utils/changelog.gz
+# /usr/share/doc/alsa-utils/changelog.Debian.gz
+# /usr/share/doc/alsa-utils/copyright
+# /usr/share/doc/alsa-utils/README.Debian
+# /usr/share/doc/alsa-utils/NEWS.Debian.gz
 dir /usr/share/lintian 755 0 0
 dir /usr/share/lintian/overrides 755 0 0
 file /usr/share/lintian/overrides/alsa-utils /usr/share/lintian/overrides/alsa-utils 644 0 0
-dir /usr/share/locale 755 0 0
+# /usr/share/locale
 dir /usr/share/locale/ja 755 0 0
 dir /usr/share/locale/ja/LC_MESSAGES 755 0 0
 file /usr/share/locale/ja/LC_MESSAGES/alsa-utils.mo /usr/share/locale/ja/LC_MESSAGES/alsa-utils.mo 644 0 0
@@ -50,6 +53,23 @@ file /usr/share/locale/fr/LC_MESSAGES/alsa-utils.mo /usr/share/locale/fr/LC_MESS
 dir /usr/share/locale/de 755 0 0
 dir /usr/share/locale/de/LC_MESSAGES 755 0 0
 file /usr/share/locale/de/LC_MESSAGES/alsa-utils.mo /usr/share/locale/de/LC_MESSAGES/alsa-utils.mo 644 0 0
+# /usr/share/man
+# /usr/share/man/man7
+# /usr/share/man/man7/alsactl_init.7.gz
+# /usr/share/man/man1
+# /usr/share/man/man1/aplay.1.gz
+# /usr/share/man/man1/aseqdump.1.gz
+# /usr/share/man/man1/speaker-test.1.gz
+# /usr/share/man/man1/aconnect.1.gz
+# /usr/share/man/man1/aplaymidi.1.gz
+# /usr/share/man/man1/aseqnet.1.gz
+# /usr/share/man/man1/arecordmidi.1.gz
+# /usr/share/man/man1/alsactl.1.gz
+# /usr/share/man/man1/amidi.1.gz
+# /usr/share/man/man1/alsaloop.1.gz
+# /usr/share/man/man1/iecset.1.gz
+# /usr/share/man/man1/amixer.1.gz
+# /usr/share/man/man1/alsamixer.1.gz
 dir /usr/share/sounds 755 0 0
 dir /usr/share/sounds/alsa 755 0 0
 file /usr/share/sounds/alsa/Side_Left.wav /usr/share/sounds/alsa/Side_Left.wav 644 0 0
@@ -70,6 +90,8 @@ file /usr/share/alsa/init/test /usr/share/alsa/init/test 644 0 0
 file /usr/share/alsa/init/hda /usr/share/alsa/init/hda 644 0 0
 file /usr/share/alsa/init/help /usr/share/alsa/init/help 644 0 0
 file /usr/share/alsa/init/00main /usr/share/alsa/init/00main 644 0 0
+# /usr/share/alsa/init/info
 file /usr/share/alsa/init/default /usr/share/alsa/init/default 644 0 0
 slink /usr/bin/arecord /usr/bin/aplay 777 0 0
+# /usr/share/man/man1/arecord.1.gz
 # vim: set filetype=config shiftwidth=2 tabstop=2 paste:

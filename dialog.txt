@@ -1,33 +1,36 @@
-# name: dialog - 1.1-20100428-1
-# description: example package with comments
-# depends: _base otherpackage1 otherpackage2
-# helpcommand: /usr/bin/somebin --help
-# versioncommand: /usr/bin/somebin --version
-# examplecommand: /usr/bin/somebin -x -y -z 10
-#
 # dir <name> <mode> <uid> <gid>
 # file <name> <source> <mode> <uid> <gid>
 # slink <new name> <original file> <mode> <uid> <gid>
 #
-# dialog - 1.1-20100428-1
-dir /usr 755 0 0
-#dir /usr/include 755 0 0
-#file /usr/include/dlg_config.h /usr/include/dlg_config.h 644 0 0
-#file /usr/include/dlg_colors.h /usr/include/dlg_colors.h 644 0 0
-#file /usr/include/dlg_keys.h /usr/include/dlg_keys.h 644 0 0
-#file /usr/include/dialog.h /usr/include/dialog.h 644 0 0
-dir /usr/bin 755 0 0
+# package name/version: dialog / 1.1-20120215-2
+#
+# /.
+# /usr
+dir /usr/include 755 0 0
+# /usr/include/dlg_config.h
+# /usr/include/dlg_colors.h
+# /usr/include/dlg_keys.h
+# /usr/include/dialog.h
+# /usr/bin
 file /usr/bin/dialog /usr/bin/dialog 755 0 0
-#dir /usr/lib 755 0 0
-#file /usr/lib/libdialog.a /usr/lib/libdialog.a 644 0 0
-dir /usr/share 755 0 0
-dir /usr/share/locale 755 0 0
+# /usr/lib
+file /usr/lib/libdialog.a /usr/lib/libdialog.a 644 0 0
+# /usr/share
+# /usr/share/man
+# /usr/share/man/man1
+# /usr/share/man/man1/dialog.1.gz
+# /usr/share/man/man3
+# /usr/share/man/man3/dialog.3.gz
+# /usr/share/locale
 dir /usr/share/locale/el 755 0 0
 dir /usr/share/locale/el/LC_MESSAGES 755 0 0
 file /usr/share/locale/el/LC_MESSAGES/dialog.mo /usr/share/locale/el/LC_MESSAGES/dialog.mo 644 0 0
 dir /usr/share/locale/mk 755 0 0
 dir /usr/share/locale/mk/LC_MESSAGES 755 0 0
 file /usr/share/locale/mk/LC_MESSAGES/dialog.mo /usr/share/locale/mk/LC_MESSAGES/dialog.mo 644 0 0
+dir /usr/share/locale/sk 755 0 0
+dir /usr/share/locale/sk/LC_MESSAGES 755 0 0
+file /usr/share/locale/sk/LC_MESSAGES/dialog.mo /usr/share/locale/sk/LC_MESSAGES/dialog.mo 644 0 0
 dir /usr/share/locale/lv 755 0 0
 dir /usr/share/locale/lv/LC_MESSAGES 755 0 0
 file /usr/share/locale/lv/LC_MESSAGES/dialog.mo /usr/share/locale/lv/LC_MESSAGES/dialog.mo 644 0 0
@@ -124,6 +127,9 @@ file /usr/share/locale/nb/LC_MESSAGES/dialog.mo /usr/share/locale/nb/LC_MESSAGES
 dir /usr/share/locale/ro 755 0 0
 dir /usr/share/locale/ro/LC_MESSAGES 755 0 0
 file /usr/share/locale/ro/LC_MESSAGES/dialog.mo /usr/share/locale/ro/LC_MESSAGES/dialog.mo 644 0 0
+dir /usr/share/locale/sl 755 0 0
+dir /usr/share/locale/sl/LC_MESSAGES 755 0 0
+file /usr/share/locale/sl/LC_MESSAGES/dialog.mo /usr/share/locale/sl/LC_MESSAGES/dialog.mo 644 0 0
 dir /usr/share/locale/es 755 0 0
 dir /usr/share/locale/es/LC_MESSAGES 755 0 0
 file /usr/share/locale/es/LC_MESSAGES/dialog.mo /usr/share/locale/es/LC_MESSAGES/dialog.mo 644 0 0
@@ -172,6 +178,92 @@ file /usr/share/locale/pl/LC_MESSAGES/dialog.mo /usr/share/locale/pl/LC_MESSAGES
 dir /usr/share/locale/mg 755 0 0
 dir /usr/share/locale/mg/LC_MESSAGES 755 0 0
 file /usr/share/locale/mg/LC_MESSAGES/dialog.mo /usr/share/locale/mg/LC_MESSAGES/dialog.mo 644 0 0
+# /usr/share/doc
+# /usr/share/doc/dialog
+# /usr/share/doc/dialog/changelog.Debian.gz
+# /usr/share/doc/dialog/copyright
+# /usr/share/doc/dialog/examples
+# /usr/share/doc/dialog/examples/inputbox1
+# /usr/share/doc/dialog/examples/calendar2-stdout
+# /usr/share/doc/dialog/examples/editbox-utf8
+# /usr/share/doc/dialog/examples/password2
+# /usr/share/doc/dialog/examples/inputmenu-stdout
+# /usr/share/doc/dialog/examples/setup-vars
+# /usr/share/doc/dialog/examples/fselect2
+# /usr/share/doc/dialog/examples/menubox5
+# /usr/share/doc/dialog/examples/timebox-stdout
+# /usr/share/doc/dialog/examples/menubox1
+# /usr/share/doc/dialog/examples/setup-utf8
+# /usr/share/doc/dialog/examples/inputbox
+# /usr/share/doc/dialog/examples/infobox2
+# /usr/share/doc/dialog/examples/menubox4
+# /usr/share/doc/dialog/examples/password
+# /usr/share/doc/dialog/examples/inputbox7
+# /usr/share/doc/dialog/examples/msgbox4-eucjp
+# /usr/share/doc/dialog/examples/inputbox3
+# /usr/share/doc/dialog/examples/report-yesno
+# /usr/share/doc/dialog/examples/menubox
+# /usr/share/doc/dialog/examples/textbox
+# /usr/share/doc/dialog/examples/mixedform2
+# /usr/share/doc/dialog/examples/yesno
+# /usr/share/doc/dialog/examples/calendar2
+# /usr/share/doc/dialog/examples/fselect-stdout
+# /usr/share/doc/dialog/examples/mixedform
+# /usr/share/doc/dialog/examples/infobox3
+# /usr/share/doc/dialog/examples/report-string
+# /usr/share/doc/dialog/examples/editbox
+# /usr/share/doc/dialog/examples/textbox2
+# /usr/share/doc/dialog/examples/checklist-utf8
+# /usr/share/doc/dialog/examples/yesno3
+# /usr/share/doc/dialog/examples/menubox10
+# /usr/share/doc/dialog/examples/calendar-stdout
+# /usr/share/doc/dialog/examples/timebox2-stdout
+# /usr/share/doc/dialog/examples/checklist10
+# /usr/share/doc/dialog/examples/infobox
+# /usr/share/doc/dialog/examples/setup-tempfile
+# /usr/share/doc/dialog/examples/inputmenu1
+# /usr/share/doc/dialog/examples/inputbox4
+# /usr/share/doc/dialog/examples/password1
+# /usr/share/doc/dialog/examples/setup-edit
+# /usr/share/doc/dialog/examples/inputmenu4
+# /usr/share/doc/dialog/examples/radiolist
+# /usr/share/doc/dialog/examples/yesno2
+# /usr/share/doc/dialog/examples/inputbox6-utf8
+# /usr/share/doc/dialog/examples/inputmenu3
+# /usr/share/doc/dialog/examples/fselect
+# /usr/share/doc/dialog/examples/report-button
+# /usr/share/doc/dialog/examples/msgbox4-utf8
+# /usr/share/doc/dialog/examples/msgbox2
+# /usr/share/doc/dialog/examples/radiolist10
+# /usr/share/doc/dialog/examples/infobox4
+# /usr/share/doc/dialog/examples/fselect2-stdout
+# /usr/share/doc/dialog/examples/msgbox
+# /usr/share/doc/dialog/examples/calendar
+# /usr/share/doc/dialog/examples/checklist
+# /usr/share/doc/dialog/examples/gauge
+# /usr/share/doc/dialog/examples/fselect1-stdout
+# /usr/share/doc/dialog/examples/menubox2
+# /usr/share/doc/dialog/examples/fselect1
+# /usr/share/doc/dialog/examples/report-edit
+# /usr/share/doc/dialog/examples/editbox2
+# /usr/share/doc/dialog/examples/mixedgauge
+# /usr/share/doc/dialog/examples/timebox2
+# /usr/share/doc/dialog/examples/report-tempfile
+# /usr/share/doc/dialog/examples/msgbox1
+# /usr/share/doc/dialog/examples/inputbox5
+# /usr/share/doc/dialog/examples/inputmenu2
+# /usr/share/doc/dialog/examples/menubox-utf8
+# /usr/share/doc/dialog/examples/gauge0-input-fd
+# /usr/share/doc/dialog/examples/timebox
+# /usr/share/doc/dialog/examples/form1
+# /usr/share/doc/dialog/examples/gauge2
+# /usr/share/doc/dialog/examples/menubox3
+# /usr/share/doc/dialog/examples/form2
+# /usr/share/doc/dialog/examples/pause
+# /usr/share/doc/dialog/examples/inputbox2
+# /usr/share/doc/dialog/README
+# /usr/share/doc/dialog/CHANGES.gz
 dir /usr/share/perl5 755 0 0
 file /usr/share/perl5/dialog.pl /usr/share/perl5/dialog.pl 644 0 0
-# vi: set shiftwidth=4 tabstop=4 paste:
+# /usr/share/doc/dialog/changelog.gz
+# vim: set filetype=config shiftwidth=2 tabstop=2 paste:
