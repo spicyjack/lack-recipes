@@ -1,0 +1,23 @@
+# _basefiles
+# a simple list of files to help with bootstrapping a LACK system
+# IMPORTANT: busybox must now be sourced from the individual project initramfs
+# script instead of from this base file
+slink /bin/sh /bin/busybox 0755 0 0
+file /bin/dir.sh :LACK_BASE:/scripts/dir.sh 0755 0 0
+slink /bin/dir /bin/dir.sh 0755 0 0 
+# a fake bash, mostly to make ldd work correctly
+file /bin/fake-bash.sh :LACK_BASE:/scripts/fake-bash.sh 0755 0 0
+slink /bin/bash /bin/fake-bash.sh 0755 0 0 
+# a fake editor, Debian's sudo wants /usr/bin/editor
+file /usr/bin/editor.sh :LACK_BASE:/scripts/editor.sh 0755 0 0
+slink /usr/bin/editor /usr/bin/editor.sh 0755 0 0 
+# create a symlink from nslookup to the host command
+slink /usr/bin/host /usr/bin/nslookup 0755 0 0
+# _basedirs /etc
+slink /etc/mtab /proc/mounts 0755 0 0
+file /etc/scripts/lack_functions.sh :LACK_BASE:/initscripts/lack_functions.sh 0755 0 0
+# the below two files should be provided by the specific project's initramfs
+# file listing
+file /etc/ld.so.conf :LACK_BASE:/etcfiles/ld.so.conf 0644 0 0
+file /etc/lode-lat1u-16.psf.gz :LACK_BASE:/misc/lode-lat1u-16.psf.gz 0644 0 0
+# vim: set filetype=config shiftwidth=2 tabstop=2 paste:
