@@ -13,18 +13,18 @@ supported versions, _Squeeze_ and _Wheezy_, in 32-bit and 64-bit flavours.
 To access a given distro, version, and architecture, just check out the Git
 branch that holds the files you want to work with;
 
-    git checkout squeeze-32bit
-    git checkout squeeze-64bit
-    git checkout wheezy-32bit
-    git checkout wheezy-64bit
+    git checkout squeeze-i386
+    git checkout squeeze-amd64
+    git checkout wheezy-i386
+    git checkout wheezy-amd64
 
 ## Current Supported Distributions/Versions/Architectures ##
 - Debian Squeeze
-  - 32-bit i386
-  - 64-bit x86_64
+  - 32-bit (`i386`)
+  - 64-bit (`x86_64`)
 - Debian Wheezy
-  - 32-bit i386
-  - 64-bit x86_64
+  - 32-bit (`i386`)
+  - 64-bit (`x86_64`)
 
 ## Other LACK-related Projects ##
 - [Main Project](https://github.com/spicyjack/lack)
