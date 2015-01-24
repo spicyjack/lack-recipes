@@ -21,10 +21,10 @@ branch that holds the files you want to work with;
 ## Current Supported Distributions/Versions/Architectures ##
 - Debian Squeeze
   - 32-bit (`i386`)
-  - 64-bit (`x86_64`)
+  - 64-bit (`amd64`)
 - Debian Wheezy
   - 32-bit (`i386`)
-  - 64-bit (`x86_64`)
+  - 64-bit (`amd64`)
 
 ## Other LACK-related Projects ##
 - [Main Project](https://github.com/spicyjack/lack)
